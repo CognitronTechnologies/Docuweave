@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans bg-light text-dark antialiased;
+}
+h1, h2, h3, h4 {
+  @apply font-heading;
+}
+.bg-page {
+  background: linear-gradient(135deg, #f7f8fa 0%, #e6eaf8 100%);
+}
