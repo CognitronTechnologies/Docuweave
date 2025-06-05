@@ -1,16 +1,41 @@
-import Link from "next/link"
+import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className="sticky top-0 flex items-center justify-between py-5 px-8 bg-white/80 backdrop-blur shadow z-30 border-b border-light">
-      <Link href="/" className="font-heading text-2xl font-bold text-primary tracking-tight">Docuweave</Link>
-      <div className="flex items-center gap-6">
-        <Link href="/#services" className="text-dark/80 hover:text-primary font-medium transition">Services</Link>
-        <Link href="/about" className="text-dark/80 hover:text-primary font-medium transition">About</Link>
-        <Link href="/contact">
-          <span className="bg-primary text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-accent transition">Contact</span>
+    <nav className="w-full py-4 px-4 md:px-8 bg-navy shadow-lg">
+      <div className="flex justify-between items-center">
+        <div className="text-xl md:text-2xl font-bold text-white">Docuweave</div>
+        <button
+          className="md:hidden text-white"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </button>
+      </div>
+      <div
+        className={`mt-4 md:mt-0 ${
+          menuOpen ? 'block' : 'hidden'
+        } md:flex gap-4 text-white font-medium`}
+      >
+        <Link href="/" className="hover:text-blue-400">
+          Home
+        </Link>
+        <Link href="/services" className="hover:text-blue-400">
+          Services
+        </Link>
+        <Link href="/portfolio" className="hover:text-blue-400">
+          Portfolio
+        </Link>
+        <Link href="/about" className="hover:text-blue-400">
+          About
+        </Link>
+        <Link href="/contact" className="hover:text-blue-400">
+          Contact
         </Link>
       </div>
     </nav>
-  )
+  );
 }
