@@ -1,6 +1,18 @@
 import Link from "next/link"
+import { useEffect, useState } from 'react';
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
 export default function Navbar() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
   return (
     <nav className="sticky top-0 flex items-center justify-between py-5 px-8 bg-white/80 backdrop-blur shadow z-30 border-b border-light">
       <Link href="/" className="font-heading text-2xl font-bold text-primary tracking-tight">Docuweave</Link>
@@ -10,6 +22,13 @@ export default function Navbar() {
         <Link href="/contact">
           <span className="bg-primary text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-accent transition">Contact</span>
         </Link>
+        <button
+          onClick={() => setIsDarkMode(!isDarkMode)}
+          className="bg-primary text-white p-2 rounded-full hover:bg-accent transition"
+          aria-label="Toggle Dark Mode"
+        >
+          {isDarkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
+        </button>
       </div>
     </nav>
   )

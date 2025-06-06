@@ -1,5 +1,4 @@
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 
 export default function About() {
   return (
@@ -18,7 +17,6 @@ export default function About() {
         </p>
         <p className="text-dark/60 mt-8">Let’s build something great together.</p>
       </main>
-      <Footer />
     </div>
   )
 }

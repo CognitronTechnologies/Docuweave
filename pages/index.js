@@ -1,39 +1,45 @@
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import TechBackground from '../components/TechBackground'
 import { BookOpenIcon, CodeBracketIcon, AdjustmentsHorizontalIcon, ClipboardDocumentCheckIcon, GlobeAltIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const services = [
   {
     icon: <CodeBracketIcon className="w-8 h-8 text-primary" />,
     title: 'API Documentation',
     desc: 'Swagger/OpenAPI, Postman, developer portals.',
+    link: '/services/api-documentation',
   },
   {
     icon: <BookOpenIcon className="w-8 h-8 text-accent" />,
     title: 'SDK & Integration Guides',
     desc: 'How-to’s for integrating with your APIs or SDKs.',
+    link: '/services/sdk-integration-guides',
   },
   {
     icon: <ClipboardDocumentCheckIcon className="w-8 h-8 text-indigo-400" />,
     title: 'User Manuals & Admin Guides',
     desc: 'Clear, actionable docs for technical and business users.',
+    link: '/services/user-manuals',
   },
   {
     icon: <AdjustmentsHorizontalIcon className="w-8 h-8 text-rose-400" />,
     title: 'Config & Deployment Guides',
     desc: 'Cloud infra, CI/CD, Terraform, and more.',
+    link: '/services/config-deployment-guides',
   },
   {
     icon: <GlobeAltIcon className="w-8 h-8 text-purple-400" />,
     title: 'Knowledge Base Content',
     desc: 'FAQs, troubleshooting, onboarding wikis.',
+    link: '/services/knowledge-base',
   },
   {
     icon: <ArrowTrendingUpIcon className="w-8 h-8 text-green-500" />,
     title: 'Technical Marketing',
     desc: 'Dev blogs, whitepapers, landing page copy.',
+    link: '/services/technical-marketing',
   },
 ]
 
@@ -58,7 +64,10 @@ export default function Home() {
             >
               <div className="rounded-full bg-primary/10 p-3 mb-2 group-hover:bg-accent/20 transition">{s.icon}</div>
               <h2 className="font-semibold text-xl text-dark group-hover:text-primary">{s.title}</h2>
-              <p className="text-dark/70">{s.desc}</p>
+              <p className="text-dark/70 mb-4">{s.desc}</p>
+              <Link href={s.link} className="text-accent hover:underline">
+                Learn More
+              </Link>
             </div>
           ))}
         </div>
@@ -68,7 +77,6 @@ export default function Home() {
           <Link href="/contact" className="inline-block bg-primary hover:bg-accent text-white py-3 px-10 rounded-full font-bold text-lg shadow transition duration-150">Contact Us</Link>
         </section>
       </main>
-      <Footer />
     </div>
   )
 }
