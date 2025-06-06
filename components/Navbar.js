@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
@@ -27,7 +27,7 @@ export default function Navbar() {
           className="bg-primary text-white p-2 rounded-full hover:bg-accent transition"
           aria-label="Toggle Dark Mode"
         >
-          {isDarkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
+          {isDarkMode ? <SunIcon className="w-6 h-6" aria-hidden="true" /> : <MoonIcon className="w-6 h-6" aria-hidden="true" />}
         </button>
       </div>
     </nav>
