@@ -44,7 +44,15 @@ export async function getStaticPaths() {
     params: { service: key },
   }));
 
-  return { paths, fallback: false };
+  // Log paths for debugging
+  console.log('Generated paths:', paths);
+
+  // Ensure paths are unique
+  const uniquePaths = Array.from(new Set(paths.map((p) => p.params.service))).map((service) => ({
+    params: { service },
+  }));
+
+  return { paths: uniquePaths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
