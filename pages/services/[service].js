@@ -40,19 +40,24 @@ export default function ServicePage({ service }) {
 }
 
 export async function getStaticPaths() {
-  const paths = Object.keys(serviceData).map((key) => ({
-    params: { service: key },
-  }));
+  const staticPages = [
+    'api-documentation',
+    'sdk-integration-guides',
+    'user-manuals',
+    'config-deployment-guides',
+    'knowledge-base',
+    'technical-marketing',
+  ];
 
-  // Log paths for debugging
-  console.log('Generated paths:', paths);
+  const paths = Object.keys(serviceData)
+    .filter((key) => !staticPages.includes(key)) // Exclude static pages
+    .map((key) => ({
+      params: { service: key },
+    }));
 
-  // Ensure paths are unique
-  const uniquePaths = Array.from(new Set(paths.map((p) => p.params.service))).map((service) => ({
-    params: { service },
-  }));
+  console.log('Filtered paths:', paths);
 
-  return { paths: uniquePaths, fallback: false };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
