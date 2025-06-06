@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import { EnvelopeIcon, UserIcon, ChatBubbleLeftRightIcon, TagIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
 
 const contactReasons = [
@@ -121,7 +120,6 @@ export default function Contact() {
           </form>
         )}
       </main>
-      <Footer />
       {/* Hidden Netlify form for build detection */}
       <form name="contact" netlify netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />

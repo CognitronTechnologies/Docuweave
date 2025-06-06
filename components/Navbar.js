@@ -1,52 +1,35 @@
-import { useState } from 'react';
-import Link from 'next/link';
+import Link from 'next/link'
+import { useEffect, useState } from 'react';
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
 
   return (
-    <nav className="w-full py-4 px-4 md:px-8 bg-navy shadow-lg relative z-20">
-      <div className="flex justify-between items-center">
-        <div className="text-xl md:text-2xl font-bold text-white">Docuweave</div>
+    <nav className="sticky top-0 flex items-center justify-between py-5 px-8 bg-white/80 backdrop-blur shadow z-30 border-b border-light">
+      <Link href="/" className="font-heading text-2xl font-bold text-primary tracking-tight">Docuweave</Link>
+      <div className="flex items-center gap-6">
+        <Link href="/#services" className="text-dark/80 hover:text-primary font-medium transition">Services</Link>
+        <Link href="/about" className="text-dark/80 hover:text-primary font-medium transition">About</Link>
+        <Link href="/contact">
+          <span className="bg-primary text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-accent transition">Contact</span>
+        </Link>
         <button
-          className="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-accent rounded"
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setIsDarkMode(!isDarkMode)}
+          className="bg-primary text-white p-2 rounded-full hover:bg-accent transition"
+          aria-label="Toggle Dark Mode"
         >
-          <span className="block w-6 h-0.5 bg-white mb-1"></span>
-          <span className="block w-6 h-0.5 bg-white mb-1"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
+          {isDarkMode ? <SunIcon className="w-6 h-6" aria-hidden="true" /> : <MoonIcon className="w-6 h-6" aria-hidden="true" />}
         </button>
       </div>
-      {/* Mobile menu overlay */}
-      <div
-        className={`fixed inset-0 bg-navy/90 transition-opacity duration-300 md:hidden ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-        onClick={() => setMenuOpen(false)}
-        aria-hidden={!menuOpen}
-      />
-      <div
-        className={`transition-all duration-300 md:static md:flex md:gap-4 md:bg-transparent md:shadow-none md:translate-y-0 md:opacity-100 md:pointer-events-auto
-          absolute left-0 right-0 bg-navy shadow-lg rounded-b-lg mt-2 md:mt-0 flex flex-col md:flex-row gap-6 text-white font-medium px-8 py-6 md:p-0 z-30
-          ${menuOpen ? 'top-full opacity-100 pointer-events-auto' : 'top-[-400px] opacity-0 pointer-events-none'}`}
-        style={{ minWidth: '60%' }}
-      >
-        <Link href="/" className="hover:text-blue-400" onClick={() => setMenuOpen(false)}>
-          Home
-        </Link>
-        <Link href="/services" className="hover:text-blue-400" onClick={() => setMenuOpen(false)}>
-          Services
-        </Link>
-        <Link href="/portfolio" className="hover:text-blue-400" onClick={() => setMenuOpen(false)}>
-          Portfolio
-        </Link>
-        <Link href="/about" className="hover:text-blue-400" onClick={() => setMenuOpen(false)}>
-          About
-        </Link>
-        <Link href="/contact" className="hover:text-blue-400" onClick={() => setMenuOpen(false)}>
-          Contact
-        </Link>
-      </div>
     </nav>
-  );
+  )
 }
