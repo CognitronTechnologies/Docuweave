@@ -2,5 +2,12 @@
   command = "npm run build"
   publish = ".next"
 
+[functions]
+  directory = "functions"
+
+[edge_functions]
+  directory = "edge-functions"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+  inputs = { "enableForms": true }
