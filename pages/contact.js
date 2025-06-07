@@ -31,17 +31,12 @@ export default function Contact() {
           </div>
         ) : (
           <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             className="space-y-6 bg-white/95 p-8 rounded-2xl shadow-card border border-light backdrop-blur-sm"
-            onSubmit={() => setSubmitted(true)}
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSubmitted(true);
+            }}
           >
-            {/* Netlify hidden input to identify form name */}
-            <input type="hidden" name="form-name" value="contact" />
-            {/* Honeypot field for spam bots */}
-            <input type="hidden" name="bot-field" />
             <div className="flex flex-col gap-1">
               <label className="text-primary font-medium flex items-center gap-2" htmlFor="name">
                 <UserIcon className="w-5 h-5" /> Name
@@ -120,14 +115,6 @@ export default function Contact() {
           </form>
         )}
       </main>
-      {/* Hidden Netlify form for build detection */}
-      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="text" name="subject" />
-        <input type="text" name="reason" />
-        <textarea name="message"></textarea>
-      </form>
     </div>
   )
 }
