@@ -10,4 +10,4 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  inputs = { "enableForms": true }
+  inputs.enableForms = true
