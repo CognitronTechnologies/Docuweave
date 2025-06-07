@@ -5,11 +5,40 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans bg-light text-dark antialiased;
+  background-color: #1a2234; /* Light navy blue background */
+  color: #ffffff; /* White text */
+  font-family: 'Inter', Arial, sans-serif;
+  background-image: none; /* Remove dark background image */
 }
-h1, h2, h3, h4 {
-  @apply font-heading;
+
+html.dark body {
+  background-color: #2a3348; /* Lighter navy blue for dark mode */
+  color: #ffffff; /* White text */
 }
-.bg-page {
-  background: linear-gradient(135deg, #f7f8fa 0%, #e6eaf8 100%);
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+a {
+  color: #4f46e5; /* Accent color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #1e40af; /* Primary color */
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4f46e5; /* Accent color */
 }
