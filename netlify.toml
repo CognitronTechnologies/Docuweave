@@ -5,8 +5,13 @@
 [functions]
   directory = "functions"
 
-[edge_functions]
-  directory = "edge-functions"
+[[edge_functions]]
+  path = "/hello"
+  function = "hello"
+
+[[edge_functions]]
+  path = "/auth"
+  function = "auth"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
