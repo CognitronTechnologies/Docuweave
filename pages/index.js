@@ -1,5 +1,4 @@
 import Navbar from '../components/Navbar'
-import TechBackground from '../components/TechBackground'
 import { BookOpenIcon, CodeBracketIcon, AdjustmentsHorizontalIcon, ClipboardDocumentCheckIcon, GlobeAltIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -47,7 +46,12 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-bg-secondary dark:bg-navy-dark">
       <Navbar />
-      <TechBackground className="absolute inset-0 w-full h-[285px] z-0 pointer-events-none" />
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.1),transparent_50%)]"></div>
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(167,139,250,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+      </div>
       <main className="relative z-10 max-w-7xl mx-auto px-4 py-20">
         <section className="mb-16 text-center">
           <h1 className="text-5xl md:text-6xl font-heading font-bold text-primary dark:text-white mb-3 drop-shadow-sm">
