@@ -1,12 +1,10 @@
 import Navbar from '../../components/Navbar';
 
 const serviceData = {
-  'core-documentation': {
-    title: 'Product-Ready Docs',
-    subtitle: 'Ship Documentation Alongside Your Product',
+  'core-documentation': {    title: 'Product-ready docs',
+    subtitle: 'Ship documentation alongside your product',
     icon: '�',
-    heroDescription: 'Your product is only as good as its documentation. We create developer-first, launch-ready docs that reduce support requests, increase adoption, and help your users succeed from day one.',
-    targetAudience: [
+    heroDescription: 'Your product is only as good as its documentation. We create developer-first, launch-ready docs that reduce support requests, increase adoption, and help your users succeed from day one.',    targetAudience: [
       'Startups launching APIs, SDKs, or platforms',
       'Product teams preparing for GA',
       'Engineering teams lacking in-house documentation bandwidth',
@@ -18,30 +16,29 @@ const serviceData = {
       '"Support is getting swamped with \'How do I integrate this?\' questions."',
       '"We need docs that can scale as the product evolves."'
     ],
-    includes: [
-      'API Documentation — REST, GraphQL, gRPC, OpenAPI specs, Postman collections',
-      'SDK & Integration Guides — Step-by-step instructions, code snippets, sample apps',
-      'Installation & Setup Docs — For CLI tools, Docker images, self-hosted deployments',
-      'Configuration & Deployment Guides — Infrastructure (AWS, Azure, GCP), CI/CD pipelines',
-      'Release Notes & Changelogs — Versioned release docs and communication plans',
-      'User & Admin Manuals — Especially for semi-technical product teams or end users'
+    includes: [      'API documentation — REST, GraphQL, gRPC, OpenAPI specs, Postman collections',
+      'SDK & integration guides — Step-by-step instructions, code snippets, sample apps',
+      'Installation & setup docs — For CLI tools, Docker images, self-hosted deployments',
+      'Configuration & deployment guides — Infrastructure (AWS, Azure, GCP), CI/CD pipelines',
+      'Release notes & changelogs — Versioned release docs and communication plans',
+      'User & admin manuals — Especially for semi-technical product teams or end users'
     ],
     bonus: 'We always structure docs with scalability and searchability in mind, using industry best practices like Docs-as-Code and modular architecture.',
     approach: [
       {
-        step: '🔍 Discovery & Audit',
+        step: '🔍 Discovery & audit',
         description: 'We review your product, codebase, and existing materials to scope the required docs.'
       },
       {
-        step: '✍️ Documentation Sprint',
+        step: '✍️ Documentation sprint',
         description: 'Our writers pair with engineers and product leads to create technically accurate, developer-friendly content.'
       },
       {
-        step: '🔄 Review & Iterate',
+        step: '🔄 Review & iterate',
         description: 'Docs are reviewed in GitHub (or your system), tested by engineers, and iterated collaboratively.'
       },
       {
-        step: '🚢 Go-Live Support',
+        step: '🚢 Go-live support',
         description: 'We help you deploy the docs in your system — or host it for you. Bonus: we\'ll help write the launch changelog or blog post, too.'
       }
     ],
@@ -64,10 +61,10 @@ const serviceData = {
       author: 'Head of Product, early-stage API startup'
     }
   },  'knowledge-management': {
-    title: 'Scale Your Team\'s Knowledge',
+    title: 'Scale your team\'s knowledge',
     subtitle: 'Internal docs that grow with your team',
     icon: '📚',
-    heroDescription: 'Document What Your Team Knows—Before It Walks Out the Door',
+    heroDescription: 'Document what your team knows—before it walks out the door',
     purpose: 'Internal documentation shouldn\'t be an afterthought. We help engineering teams capture tribal knowledge, onboard faster, and reduce Slack-dependency with clean, searchable, developer-first internal docs.',
     targetAudience: [
       'Fast-growing startups onboarding new engineers',
@@ -80,30 +77,29 @@ const serviceData = {
       '"Our internal tools are poorly documented, so no one wants to touch them."',
       '"Everyone keeps asking the same questions in Slack."',
       '"We have docs, but no one trusts or updates them."'
-    ],
-    includes: [
-      'Engineering Onboarding Docs — Role-specific guides, system overviews, common workflows',
-      'Internal Wikis — Developer-friendly, version-controlled docs for internal tools and processes',
-      'FAQs & Troubleshooting Guides — For both customer-facing and internal issues',
-      'Runbooks & Playbooks — Clear instructions for handling common ops/dev tasks',
-      'Tooling Guides — Docs for CI/CD, feature flags, infrastructure, internal dashboards'
+    ],    includes: [
+      'Engineering onboarding docs — Role-specific guides, system overviews, common workflows',
+      'Internal wikis — Developer-friendly, version-controlled docs for internal tools and processes',
+      'FAQs & troubleshooting guides — For both customer-facing and internal issues',
+      'Runbooks & playbooks — Clear instructions for handling common ops/dev tasks',
+      'Tooling guides — Docs for CI/CD, feature flags, infrastructure, internal dashboards'
     ],
     bonus: 'We audit your current internal documentation and recommend a sustainable update flow—Docs-as-Code, Git-based wikis, or Notion + versioning.',
     approach: [
       {
-        step: '🧠 Knowledge Discovery',
+        step: '🧠 Knowledge discovery',
         description: 'We interview SMEs and shadow engineering workflows to capture how things actually get done.'
       },
       {
-        step: '📄 Content Drafting',
+        step: '📄 Content drafting',
         description: 'We organize and write internal docs using your preferred tools and frameworks.'
       },
       {
-        step: '🔁 Review & Validation',
+        step: '🔁 Review & validation',
         description: 'We loop in stakeholders to ensure accuracy and sustainability.'
       },
       {
-        step: '🧰 Implementation & Maintenance Plan',
+        step: '🧰 Implementation & maintenance plan',
         description: 'We provide structure and strategy for ongoing doc ownership—without needing to build a docs team.'
       }
     ],
@@ -142,8 +138,8 @@ const serviceData = {
       'Better incident response'
     ]
   },  'technical-content-marketing': {
-    title: 'Grow with Dev-First Content',
-    subtitle: '🧲 Content That Converts Developers—Without Feeling Like Marketing',
+    title: 'Grow with dev-first content',
+    subtitle: '🧲 Content that converts developers—without feeling like marketing',
     icon: '🚀',
     heroDescription: 'Developers hate fluff. We create deeply technical content that earns attention, builds trust, and grows your product with the people who matter most: engineers.',
     targetAudience: [
@@ -157,11 +153,10 @@ const serviceData = {
       '"We\'re struggling to explain technical concepts clearly."',
       '"Our content sounds like it was written by marketing—for marketers."',
       '"We have devs, but they don\'t have time to write."'
-    ],
-    includes: [
-      'Developer Tutorials & How-Tos — From beginner quickstarts to advanced integrations',
-      'Thought Leadership Blogs — Deep dives, architecture breakdowns, and innovation stories',
-      'Case Studies — Developer success stories, partner integrations, user wins',
+    ],    includes: [
+      'Developer tutorials & how-tos — From beginner quickstarts to advanced integrations',
+      'Thought leadership blogs — Deep dives, architecture breakdowns, and innovation stories',
+      'Case studies — Developer success stories, partner integrations, user wins',
       'Whitepapers — Technical deep dives for enterprise buyers or strategic partners',
       'Landing Page Copy — For API-first products, SDKs, or open source projects',
       'Newsletters — Developer-focused updates, releases, or changelogs with links that actually get clicked'
@@ -204,8 +199,8 @@ const serviceData = {
       author: 'Head of DevRel, API startup'
     }
   },  'documentation-infrastructure': {
-    title: 'Modern Docs Stack',
-    subtitle: '🛠️ Build a Future-Ready Documentation Stack',
+    title: 'Modern docs stack',
+    subtitle: '🛠️ Build a future-ready documentation stack',
     icon: '🧱',
     heroDescription: 'Outgrown Confluence? Struggling with messy Notion pages? We help you modernize your docs with scalable, developer-friendly systems — from Docs-as-Code to AI-ready workflows.',
     targetAudience: [
@@ -220,26 +215,25 @@ const serviceData = {
       '"We can\'t easily version, update, or track changes to our documentation."',
       '"We want to explore AI or chat-based help, but our docs aren\'t structured enough."'
     ],
-    includes: [
-      'Docs-as-Code Implementation — Set up and configure systems like Docusaurus, MkDocs, Hugo, or custom Git-based workflows',
-      'Content Migration — Cleanly move content from legacy systems (Confluence, Notion, Google Docs, CMS) to modern stacks',
-      'Structure & Architecture Redesign — Create scalable TOCs, modular content, and topic-based IA',
-      'AI-Readiness Audits — Evaluate structure, metadata, and retrieval readiness for tools like GPT-based assistants',
-      'Search Optimization — Improve discoverability across internal and public docs',
-      'Build & Deploy Support — CI/CD setup for publishing, versioning, and previewing documentation'
+    includes: [      'Docs-as-Code implementation — Set up and configure systems like Docusaurus, MkDocs, Hugo, or custom Git-based workflows',
+      'Content migration — Cleanly move content from legacy systems (Confluence, Notion, Google Docs, CMS) to modern stacks',
+      'Structure & architecture redesign — Create scalable TOCs, modular content, and topic-based IA',
+      'AI-readiness audits — Evaluate structure, metadata, and retrieval readiness for tools like GPT-based assistants',
+      'Search optimization — Improve discoverability across internal and public docs',
+      'Build & deploy support — CI/CD setup for publishing, versioning, and previewing documentation'
     ],
     bonus: 'We document the doc system itself, so your team can own and evolve it over time.',
     approach: [
       {
-        step: '📊 Audit & Discovery',
+        step: '📊 Audit & discovery',
         description: 'We assess your current system\'s gaps, content quality, and future goals (including AI use cases).'
       },
       {
-        step: '🧱 System Design',
+        step: '🧱 System design',
         description: 'We architect an ideal structure tailored to your product, team, and user needs.'
       },
       {
-        step: '🔁 Migration + Rebuild',
+        step: '🔁 Migration + rebuild',
         description: 'We migrate and modernize your content, transforming it as needed for readability and structure.'
       },
       {
@@ -267,8 +261,8 @@ const serviceData = {
       author: 'VP of Engineering, DevTool company'
     }
   },  'content-strategy': {
-    title: 'Optimize & Scale Docs',
-    subtitle: '🧪 Turn Docs into a Scalable, Measurable Asset',
+    title: 'Optimize & scale docs',
+    subtitle: '🧪 Turn docs into a scalable, measurable asset',
     icon: '🧠',
     heroDescription: 'Great documentation isn\'t just written once—it\'s maintained, measured, and improved over time. We help you audit, refactor, and scale your content so it grows with your product and keeps delivering value.',
     targetAudience: [
@@ -331,8 +325,8 @@ const serviceData = {
       author: 'Head of Product, B2B SaaS Platform'
     }
   },  'custom-advisory': {
-    title: 'On-Demand Docs Expertise',
-    subtitle: '🧠 Get Docs Help When (and How) You Need It',
+    title: 'On-demand docs expertise',
+    subtitle: '🧠 Get docs help when (and how) you need it',
     icon: '🛠️',
     heroDescription: 'No need to hire a full-time doc team. Docuweave gives you flexible, senior-level documentation support—on your terms. Think of us as your plug-and-play documentation team.',
     targetAudience: [
