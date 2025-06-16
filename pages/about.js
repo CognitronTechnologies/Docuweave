@@ -153,39 +153,29 @@ export default function About() {
         {/* Tools & Tech */}
         <section className="bg-bg-primary dark:bg-navy py-16">
           <div className="max-w-6xl mx-auto px-4">            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary dark:text-white mb-8 text-center">
-              🛠️ Tools & tech we slot into
+              ✍️ Meet Docuweave
             </h2>
-            <p className="text-lg text-text-secondary dark:text-gray-300 mb-8 text-center">We're fluent in:</p>            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  category: "Docs-as-code",
-                  tools: "Docusaurus, MkDocs, Hugo, ReadMe, GitHub"
-                },
-                {
-                  category: "Spec-first tools", 
-                  tools: "Swagger/OpenAPI, Postman"
-                },
-                {
-                  category: "Workflow tools",
-                  tools: "Notion, Jira, Confluence, Slack"
-                },
-                {
-                  category: "Analytics & search",
-                  tools: "Algolia, Google Analytics, Segment"
-                }
-              ].map((toolGroup, index) => (
-                <div key={index} className="bg-navy-50 dark:bg-navy-light border border-navy-200 dark:border-navy-light rounded-xl p-6 shadow-card">
-                  <h3 className="font-heading font-semibold text-primary dark:text-accent mb-3">{toolGroup.category}:</h3>
-                  <p className="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">{toolGroup.tools}</p>
-                </div>
-              ))}
+            <p className="text-lg text-text-secondary dark:text-gray-300 mb-6 leading-relaxed">
+              Docuweave is a distributed team of engineers-turned-writers, content strategists, and DevRel professionals.
+            </p>            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-xl p-6 mb-6 border border-primary/20 dark:border-accent/30">
+                <p className="text-lg text-text-primary dark:text-white font-medium mb-4">We've written and scaled documentation for:</p>
+                <ul className="space-y-2 text-text-secondary dark:text-gray-300">
+                  <li>• APIs used by thousands of developers</li>
+                  <li>• DevTools used by major fintech and AI startups</li>
+                  <li>• Platforms adopted by open-source communities worldwide</li>
+                </ul>
+              </div>
+              <p className="text-lg text-text-primary dark:text-white font-medium text-center">
+                We don't just write docs. We build systems, mentor teams, and help you scale like you've already hired your dream docs team.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Meet Docuweave */}
-        <section className="bg-bg-secondary dark:bg-navy-dark py-16">
-          <div className="max-w-6xl mx-auto px-4">            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary dark:text-white mb-8 text-center">
+        {/* Operating principles */}
+        <section className="bg-bg-primary dark:bg-navy py-16">
+          <div className="max-w-6xl mx-auto px-4"><h2 className="text-3xl md:text-4xl font-heading font-bold text-primary dark:text-white mb-8 text-center">
               ✍️ Meet Docuweave
             </h2>
             <div className="max-w-4xl mx-auto">

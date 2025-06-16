@@ -41,15 +41,7 @@ const serviceData = {
         step: '🚢 Go-live support',
         description: 'We help you deploy the docs in your system — or host it for you. Bonus: we\'ll help write the launch changelog or blog post, too.'
       }
-    ],
-    timeline: '2–4 weeks, depending on complexity and number of products/APIs.',
-    tools: [
-      'OpenAPI / Swagger',
-      'Postman',
-      'GitHub, GitLab, Bitbucket',
-      'Docusaurus, MkDocs, Hugo',
-      'ReadMe, Stoplight, Redocly'
-    ],
+    ],    timeline: '2–4 weeks, depending on complexity and number of products/APIs.',
     addOns: [
       'Sample apps or demo repos',
       'Code walkthrough videos or scripts',
@@ -102,15 +94,7 @@ const serviceData = {
         step: '🧰 Implementation & maintenance plan',
         description: 'We provide structure and strategy for ongoing doc ownership—without needing to build a docs team.'
       }
-    ],
-    timeline: '2–6 weeks, depending on team size and doc sprawl.',
-    tools: [
-      'GitHub Wikis, GitBook, Notion',
-      'Docusaurus, MkDocs',
-      'Confluence (yes, we can fix it)',
-      'Mermaid, Diagrams.net',
-      'Google Drive/Docs → Git workflows'
-    ],
+    ],    timeline: '2–6 weeks, depending on team size and doc sprawl.',
     addOns: [
       'Documentation style guide for internal teams',
       'Internal tool tutorials (video scripts or text)',
@@ -179,14 +163,7 @@ const serviceData = {
         step: '🚀 Launch & Amplify',
         description: 'We can support publishing, community engagement, and distribution planning.'
       }
-    ],
-    timeline: '2–3 weeks per content cycle, or ongoing monthly content calendar.',
-    tools: [
-      'Markdown, GitHub, and Docs-as-Code platforms',
-      'Ghost, Webflow, Hugo, or custom CMS setups',
-      'Google Docs for review flow',
-      'Grammarly, Hemingway, and dev tool integrations'
-    ],
+    ],    timeline: '2–3 weeks per content cycle, or ongoing monthly content calendar.',
     addOns: [
       'Social media snippets (Twitter, LinkedIn, Discord)',
       'Developer landing pages or microsites',
@@ -240,15 +217,7 @@ const serviceData = {
         step: '🤖 AI & Automation Layer',
         description: 'We prepare your docs for future-ready use: embeddings, metadata tagging, and prompt-friendly structure.'
       }
-    ],
-    timeline: '3–6 weeks, depending on system complexity and volume of content.',
-    tools: [
-      'Docusaurus, MkDocs, Hugo, Docsify, ReadMe',
-      'GitHub Actions, Netlify, Vercel, Azure DevOps',
-      'Notion, Confluence, Google Docs',
-      'Custom AI RAG (Retrieval-Augmented Generation) integrations',
-      'Algolia, DocSearch, Typesense, Swiftype'
-    ],
+    ],    timeline: '3–6 weeks, depending on system complexity and volume of content.',
     addOns: [
       'ChatGPT-style AI assistant integration',
       'Front-end UX enhancements for developer docs',
@@ -303,16 +272,7 @@ const serviceData = {
         step: '📈 Governance & Metrics Setup',
         description: 'We establish scalable content ownership, review systems, and performance reporting.'
       }
-    ],
-    timeline: '4–8 weeks, depending on content volume and scope of refactor.',
-    tools: [
-      'Custom doc audit frameworks',
-      'Google Analytics, Amplitude, Hotjar',
-      'Algolia / search logs for UX gaps',
-      'Markdown linters, Vale, Stylelint',
-      'GitHub Actions for PR-based workflows',
-      'Notion, Jira, or Linear for doc ticketing'
-    ],
+    ],    timeline: '4–8 weeks, depending on content volume and scope of refactor.',
     addOns: [
       'AI-generated insights based on usage or search queries',
       '"Doc Health Dashboard" setup for internal visibility',
@@ -367,15 +327,7 @@ const serviceData = {
         step: '📣 Ongoing Communication',
         description: 'You\'ll always know what\'s happening, what\'s next, and what we need from you.'
       }
-    ],
-    timeline: 'Fractional — e.g., 20–40 hours/month | Project-based — fixed scope and deliverables | Retainer — rolling monthly support for content-heavy teams',
-    tools: [
-      'GitHub / GitLab PR reviews',
-      'Docs-as-Code workflows (Docusaurus, MkDocs, ReadMe, etc.)',
-      'Linear / Jira / Asana / Trello',
-      'Slack, Teams, Discord',
-      'Notion, Confluence, Google Docs'
-    ],
+    ],    timeline: 'Fractional — e.g., 20–40 hours/month | Project-based — fixed scope and deliverables | Retainer — rolling monthly support for content-heavy teams',
     addOns: [
       'Ghostwriting for founder or DevRel content',
       'Codebase onboarding & ramp-up sessions',
@@ -471,26 +423,14 @@ export default function ServicePage({ service }) {
                 ))}
               </div>
             </div>
-          </section>
-
-          {/* Timeline, Tools, Add-ons */}
+          </section>          {/* Timeline, Add-ons */}
           <section className="bg-bg-primary dark:bg-navy py-16">
             <div className="max-w-6xl mx-auto px-4">
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 {/* Timeline */}
                 <div className="bg-navy-50 dark:bg-navy-light border border-navy-200 dark:border-navy-light rounded-xl p-6 shadow-card">
                   <h3 className="text-xl font-heading font-bold text-primary dark:text-white mb-4">⏱️ Timeline</h3>
                   <p className="text-text-primary dark:text-white font-medium">{service.timeline}</p>
-                </div>
-
-                {/* Tools */}
-                <div className="bg-navy-50 dark:bg-navy-light border border-navy-200 dark:border-navy-light rounded-xl p-6 shadow-card">
-                  <h3 className="text-xl font-heading font-bold text-primary dark:text-white mb-4">🧰 Tools we use</h3>
-                  <ul className="space-y-2">
-                    {service.tools.map((tool, index) => (
-                      <li key={index} className="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">• {tool}</li>
-                    ))}
-                  </ul>
                 </div>
 
                 {/* Add-ons */}
