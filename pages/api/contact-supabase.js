@@ -15,7 +15,6 @@ export default async function handler(req, res) {
   }
 
   let submissionId = null;
-  let databaseResult; // Declare databaseResult to avoid ReferenceError
 
   try {
     console.log('📨 Processing contact form submission...');
@@ -26,8 +25,6 @@ export default async function handler(req, res) {
       keepExtensions: true,
       maxFileSize: 10 * 1024 * 1024, // 10MB limit
       multiples: true, // Allow multiple files
-      allowEmptyFiles: true, // Allow empty file uploads (optional file upload)
-      minFileSize: 0, // Allow files of 0 bytes
     });
 
     const [fields, files] = await form.parse(req);
@@ -81,7 +78,10 @@ export default async function handler(req, res) {
       attachments,
       ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
       user_agent: req.headers['user-agent']
-    };    // Step 1: Save to Supabase Database
+    };
+
+    // Step 1: Save to Supabase Database (Primary storage)
+    let databaseResult = null;
     try {
       console.log('💾 Saving to Supabase database...');
       databaseResult = await contactService.saveSubmission(submission);
@@ -109,27 +109,37 @@ export default async function handler(req, res) {
 
     } catch (dbError) {
       console.error('❌ Database save failed:', dbError);
-      throw new Error('Failed to save submission to database');
+      // Continue with fallback storage
     }
 
-    // Step 5: Cleanup temporary files
+    // Step 3: Save to local JSON file as backup (fallback)
+    const submissionsFile = path.join(process.cwd(), 'contact-submissions.json');
     try {
-      for (const attachment of attachments) {
-        if (fs.existsSync(attachment.path)) {
-          fs.unlinkSync(attachment.path);
-        }
+      let submissions = [];
+      
+      if (fs.existsSync(submissionsFile)) {
+        const fileContent = fs.readFileSync(submissionsFile, 'utf8');
+        submissions = JSON.parse(fileContent);
       }
-      console.log('🧹 Temporary files cleaned up');
-    } catch (cleanupError) {
-      console.error('⚠️ Cleanup warning:', cleanupError);
+
+      submissions.push({
+        ...submission,
+        database_id: submissionId,
+        saved_to_database: databaseResult ? true : false
+      });
+      
+      fs.writeFileSync(submissionsFile, JSON.stringify(submissions, null, 2));
+      console.log('✅ Submission saved to local backup');
+    } catch (backupError) {
+      console.error('❌ Local backup failed:', backupError);
+      // Continue with email sending
     }
 
     // Success response
     res.status(200).json({ 
       message: 'Form submitted successfully!',
       submissionId: submissionId || submission.timestamp,
-      savedToDatabase: databaseResult ? true : false,
-      system: 'Supabase Only'
+      savedToDatabase: databaseResult ? true : false
     });
 
   } catch (error) {

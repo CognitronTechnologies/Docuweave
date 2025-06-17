@@ -2,39 +2,48 @@ import Navbar from '../components/Navbar';
 import Link from 'next/link';
 import { CodeBracketIcon, BookOpenIcon, ArrowTrendingUpIcon, AdjustmentsHorizontalIcon, GlobeAltIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 
+const iconMap = {
+	'code-bracket': <CodeBracketIcon className="w-8 h-8 text-primary" />,
+	'book-open': <BookOpenIcon className="w-8 h-8 text-accent" />,
+	'arrow-trending-up': <ArrowTrendingUpIcon className="w-8 h-8 text-green-500" />,
+	'ajustments-horizontal': <AdjustmentsHorizontalIcon className="w-8 h-8 text-rose-400" />,
+	'globe-alt': <GlobeAltIcon className="w-8 h-8 text-purple-400" />,
+	'clipboard-document-check': <ClipboardDocumentCheckIcon className="w-8 h-8 text-indigo-400" />,
+};
+
 const services = [
 	{
-		icon: <CodeBracketIcon className="w-8 h-8 text-primary" />,
+		icon: 'code-bracket',
 		title: 'Product-ready docs',
 		description: 'Ship documentation alongside your product. Developer-first docs that reduce support requests and help users succeed from day one.',
 		link: '/services/core-documentation',
 	},
 	{
-		icon: <BookOpenIcon className="w-8 h-8 text-accent" />,
+		icon: 'book-open',
 		title: 'Scale your team\'s knowledge',
 		description: 'Document what your team knows—before it walks out the door. Capture tribal knowledge and reduce Slack-dependency.',
 		link: '/services/knowledge-management',
 	},
 	{
-		icon: <ArrowTrendingUpIcon className="w-8 h-8 text-green-500" />,
+		icon: 'arrow-trending-up',
 		title: 'Grow with dev-first content',
 		description: 'Content that converts developers—without feeling like marketing. Technical storytelling that builds trust and drives growth.',
 		link: '/services/technical-content-marketing',
 	},
 	{
-		icon: <AdjustmentsHorizontalIcon className="w-8 h-8 text-rose-400" />,
+		icon: 'adjustments-horizontal',
 		title: 'Modern docs stack',
 		description: 'Build a future-ready documentation stack. Modernize with scalable, AI-ready systems and docs-as-code workflows.',
 		link: '/services/documentation-infrastructure',
 	},
 	{
-		icon: <GlobeAltIcon className="w-8 h-8 text-purple-400" />,
+		icon: 'globe-alt',
 		title: 'Optimize & scale docs',
 		description: 'Turn docs into a scalable, measurable asset. Audit, refactor, and scale your content so it grows with your product.',
 		link: '/services/content-strategy',
 	},
 	{
-		icon: <ClipboardDocumentCheckIcon className="w-8 h-8 text-indigo-400" />,
+		icon: 'clipboard-document-check',
 		title: 'On-demand docs expertise',
 		description: 'Get docs help when and how you need it. Flexible, senior-level documentation support without the hiring headache.',
 		link: '/services/custom-advisory',
@@ -66,7 +75,7 @@ export default function Services() {
 							key={service.title}
 							className="bg-bg-primary dark:bg-navy border border-border dark:border-navy-light rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-[1.02] group"
 						>
-							<div className="rounded-full bg-primary/10 dark:bg-accent/20 p-3 mb-4 group-hover:bg-accent/20 dark:group-hover:bg-accent/30 transition w-fit">{service.icon}</div>
+							<div className="rounded-full bg-primary/10 dark:bg-accent/20 p-3 mb-4 group-hover:bg-accent/20 dark:group-hover:bg-accent/30 transition w-fit">{iconMap[service.icon]}</div>
 							<h2 className="text-xl font-semibold mb-3 text-text-primary dark:text-white group-hover:text-primary dark:group-hover:text-accent transition">
 								{service.title}
 							</h2>
