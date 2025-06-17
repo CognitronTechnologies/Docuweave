@@ -69,7 +69,7 @@ export default function Home() {
             Documentation That <span className="text-accent">Drives Results</span>
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary dark:text-gray-300 max-w-3xl mx-auto">
-            We create developer-first documentation that reduces support requests, accelerates adoption, and scales with your product. No fluff, just docs that work.
+            We create developer-first documentation that reduces support requests, accelerates adoption, and scales with your product.
           </p>
         </section>
         <div id="services" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
