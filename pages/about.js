@@ -12,7 +12,7 @@ export default function About() {
             👋 About Docuweave
           </h1>
           <p className="text-2xl md:text-3xl text-accent font-medium mb-6">
-            🚀 Docs That Drive Adoption, Reduce Support, and Scale with You
+            🚀 Docs that drive adoption, reduce support, and scale with you
           </p>
           <p className="text-xl text-text-secondary dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
             At Docuweave, we help fast-moving product teams turn developer documentation into a competitive advantage. 
@@ -37,11 +37,11 @@ export default function About() {
                 <ul className="space-y-2 text-red-800 dark:text-red-300">
                   <li>• Written under deadline pressure</li>
                   <li>• Maintained by overworked engineers</li>
-                  <li>• Treated as a one-time deliverable, not a system</li>
+                  <li>• Treated as a one-time deliverable, rather than a maintained, strategic asset.</li>
                 </ul>
               </div>
               <p className="text-lg text-text-secondary dark:text-gray-300 mb-4 leading-relaxed">
-                We knew there was a better way—where documentation wasn't an afterthought, but a core product surface.
+                We knew there was a better way—where documentation wasn't an afterthought, but a core part of the product experience.
               </p>
               <p className="text-lg text-text-primary dark:text-white font-medium">
                 That's why we created Docuweave: to bring clarity, consistency, and craftsmanship to the developer documentation stack.
