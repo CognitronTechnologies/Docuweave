@@ -5,3 +5,9 @@ node_modules
 .env.test.local
 .env.production.local
 .DS_Store
+uploads/
+.env
+.env.*.local
+out/
+# Local Netlify folder
+.netlify
