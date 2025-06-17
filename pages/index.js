@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar'
+import SEO from '../components/SEO'
 import { BookOpenIcon, CodeBracketIcon, AdjustmentsHorizontalIcon, ClipboardDocumentCheckIcon, GlobeAltIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -56,6 +57,12 @@ const iconMap = {
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-bg-secondary dark:bg-navy-dark">
+      <SEO
+        title="Technical Writing & Developer Docs Agency | Docuweave"
+        description="We help software teams create clear, useful developer documentation. API docs, onboarding, content strategy, and more."
+        url="https://yourdomain.com"
+        image="https://yourdomain.com/og-image.png"
+      />
       <Navbar />
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-30 dark:opacity-20 pointer-events-none">
