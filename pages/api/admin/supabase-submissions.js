@@ -1,12 +1,6 @@
 import { contactService } from '../../../lib/contactService.js';
 
 export default async function handler(req, res) {
-  // Simple authentication check - in production, use proper auth
-  const { authorization } = req.headers;
-  if (!authorization || authorization !== `Bearer ${process.env.ADMIN_API_KEY}`) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-
   try {
     switch (req.method) {
       case 'GET':
