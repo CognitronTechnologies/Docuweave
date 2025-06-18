@@ -57,11 +57,11 @@ export default function Services() {
 			<SEO
 				title="Technical Writing & Documentation Services | Docuweave"
 				description="Discover our full range of technical writing, API documentation, developer onboarding, and content strategy services for software teams."
-				canonical="https://yourdomain.com/services"
+				canonical="https://docuweave.io/services"
 				openGraph={{
 					title: 'Technical Writing & Documentation Services | Docuweave',
 					description: 'Discover our full range of technical writing, API documentation, developer onboarding, and content strategy services for software teams.',
-					url: 'https://yourdomain.com/services',
+					url: 'https://docuweave.io/services',
 					type: 'website',
 				}}
 				schemaType="Service"
@@ -71,7 +71,7 @@ export default function Services() {
 					provider: {
 						'@type': 'Organization',
 						name: 'Docuweave',
-						url: 'https://yourdomain.com',
+						url: 'https://docuweave.io',
 					},
 					areaServed: 'Global',
 					serviceType: [
@@ -80,11 +80,15 @@ export default function Services() {
 						'Content Strategy',
 						'Developer Onboarding',
 					],
-					url: 'https://yourdomain.com/services',
+					url: 'https://docuweave.io/services',
 				}}
 			/>
-			<div className="min-h-screen flex flex-col bg-bg-secondary dark:bg-navy-dark">
+			<div className="min-h-screen flex flex-col bg-navy-dark">
 				<Navbar />
+				{/* Gradient overlay background for hero section */}
+				<div className="absolute top-0 left-0 w-full h-[380px] z-0">
+					<div className="w-full h-full bg-gradient-to-b from-[#0A1F44] to-[#232526] opacity-90"></div>
+				</div>
 				{/* Subtle background pattern */}
 				<div className="absolute inset-0 opacity-30 dark:opacity-20 pointer-events-none">
 					<div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>

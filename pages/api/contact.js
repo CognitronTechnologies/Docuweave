@@ -16,7 +16,6 @@ export default async function handler(req, res) {
   let databaseResult;
 
   try {
-    console.log('📨 Processing contact form submission...');
     // Use formidable in-memory (no uploadDir)
     const form = formidable({
       maxFileSize: 10 * 1024 * 1024, // 10MB limit
@@ -34,13 +33,6 @@ export default async function handler(req, res) {
       reason: Array.isArray(fields.reason) ? fields.reason[0] : fields.reason,
       message: Array.isArray(fields.message) ? fields.message[0] : fields.message,
     };
-
-    console.log('📝 Form data received:', {
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      reason: formData.reason
-    });
 
     // Process attachments (in-memory)
     const attachments = [];
@@ -78,14 +70,11 @@ export default async function handler(req, res) {
 
     // Step 1: Save to Supabase Database
     try {
-      console.log('💾 Saving to Supabase database...');
       databaseResult = await contactService.saveSubmission(submission);
       submissionId = databaseResult.id;
-      console.log('✅ Successfully saved to database with ID:', submissionId);
 
       // Step 2: Upload attachments to Supabase Storage
       if (attachments.length > 0 && submissionId) {
-        console.log('📎 Uploading attachments to Supabase Storage...');
         for (const attachment of attachments) {
           if (attachment.buffer) {
             await contactService.uploadAttachment(
@@ -98,13 +87,11 @@ export default async function handler(req, res) {
         }
       }
     } catch (err) {
-      console.error('❌ Error saving submission or uploading attachments:', err);
       return res.status(500).json({ message: 'Failed to save submission or upload attachments.' });
     }
 
     return res.status(200).json({ message: 'Submission received', id: submissionId });
   } catch (error) {
-    console.error('❌ Error processing contact form:', error);
     return res.status(500).json({ message: 'Error processing contact form.' });
   }
 }

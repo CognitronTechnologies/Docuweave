@@ -7,8 +7,8 @@ import Head from 'next/head'
 export default function SEO({
   title = 'Docuweave | Technical Writing & Developer Docs Consultancy',
   description = 'We help software teams create clear, useful developer documentation. API docs, onboarding, content strategy, and more.',
-  url = 'https://yourdomain.com',
-  image = 'https://yourdomain.com/og-image.png',
+  url = 'https://docuweave.io',
+  image = 'https://docuweave.io/og-image.png',
   type = 'website',
   schemaType,
   schemaData,

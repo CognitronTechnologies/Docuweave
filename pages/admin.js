@@ -75,7 +75,7 @@ export default function Admin() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
   }
   return (
-    <div className="min-h-screen bg-bg-secondary dark:bg-navy-dark">
+    <div className="min-h-screen bg-navy-dark">
       <Navbar />
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="mb-8 flex items-center justify-between">

@@ -8,28 +8,32 @@ export default function About() {
       <SEO
         title="About Docuweave | Meet Our Technical Writing Experts"
         description="Meet the Docuweave team and learn how our technical writers help software companies turn documentation into a competitive advantage."
-        canonical="https://yourdomain.com/about"
+        canonical="https://docuweave.io/about"
         openGraph={{
           title: 'About Docuweave | Meet Our Technical Writing Experts',
           description: 'Meet the Docuweave team and learn how our technical writers help software companies turn documentation into a competitive advantage.',
-          url: 'https://yourdomain.com/about',
+          url: 'https://docuweave.io/about',
           type: 'website',
         }}
         schemaType="AboutPage"
         schemaData={{
           name: 'About Docuweave',
           description: 'Meet the Docuweave team and learn how our technical writers help software companies turn documentation into a competitive advantage.',
-          url: 'https://yourdomain.com/about',
+          url: 'https://docuweave.io/about',
           publisher: {
             '@type': 'Organization',
             name: 'Docuweave',
-            url: 'https://yourdomain.com',
+            url: 'https://docuweave.io',
           },
         }}
       />
-      <div className="min-h-screen flex flex-col bg-bg-secondary dark:bg-navy-dark">
+      <div className="relative min-h-screen flex flex-col bg-navy-dark">
+        {/* Gradient overlay background for hero section */}
+        <div className="absolute top-0 left-0 w-full h-[380px] z-0">
+          <div className="w-full h-full bg-gradient-to-b from-[#0A1F44] to-[#232526] opacity-90"></div>
+        </div>
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 relative z-10">
           {/* Hero Section */}
           <section className="max-w-6xl mx-auto px-4 py-16 text-center">
             <h1 className="text-5xl md:text-6xl font-heading font-bold text-primary dark:text-white mb-4">
