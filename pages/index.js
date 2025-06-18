@@ -59,7 +59,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-navy-dark">
       <SEO
         title="Technical Writing & Developer Docs Agency | Docuweave"
-        description="We help software teams create clear, useful developer documentation. API docs, onboarding, content strategy, and more."
+        description="Docs That Deliver Impact. DocuWeave crafts technical documentation that cuts support, boosts adoption, and scales with your product. Get a free audit"
         url="https://docuweave.io"
         image="https://docuweave.io/og-image.png"
       />
@@ -77,10 +77,10 @@ export default function Home() {
       <main className="relative z-10 max-w-7xl mx-auto px-4 py-20">
         <section className="mb-16 text-center">
           <h1 className="text-5xl md:text-6xl font-heading font-bold text-primary dark:text-white mb-3 drop-shadow-sm">
-            Documentation That <span className="text-accent">Drives Results</span>
+            Docs That <span className="text-accent">Deliver Impact</span>
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary dark:text-gray-300 max-w-3xl mx-auto">
-            We create developer-first documentation that reduces support requests, accelerates adoption, and scales with your product.
+            Crafting documentation that reduces support requests, accelerates adoption, and scales with your product.
           </p>
         </section>
         <div id="services" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
