@@ -9,11 +9,11 @@ export default function ServicePage({ service }) {
         <SEO
           title="Service Not Found | Docuweave"
           description="The requested service page could not be found."
-          canonical="https://yourdomain.com/services/not-found"
+          canonical="https://docuweave.io/services/not-found"
           openGraph={{
             title: 'Service Not Found | Docuweave',
             description: 'The requested service page could not be found.',
-            url: 'https://yourdomain.com/services/not-found',
+            url: 'https://docuweave.io/services/not-found',
             type: 'website',
           }}
         />
@@ -35,11 +35,11 @@ export default function ServicePage({ service }) {
       <SEO
         title={`${service.title} | Docuweave Services`}
         description={service.heroDescription || service.subtitle || service.purpose}
-        canonical={`https://yourdomain.com/services/${service.slug || ''}`}
+        canonical={`https://docuweave.io/services/${service.slug || ''}`}
         openGraph={{
           title: `${service.title} | Docuweave Services`,
           description: service.heroDescription || service.subtitle || service.purpose,
-          url: `https://yourdomain.com/services/${service.slug || ''}`,
+          url: `https://docuweave.io/services/${service.slug || ''}`,
           type: 'article',
         }}
         schemaType="Service"
@@ -49,14 +49,14 @@ export default function ServicePage({ service }) {
           provider: {
             '@type': 'Organization',
             name: 'Docuweave',
-            url: 'https://yourdomain.com',
+            url: 'https://docuweave.io',
           },
           areaServed: 'Global',
           serviceType: service.title,
-          url: `https://yourdomain.com/services/${service.slug || ''}`,
+          url: `https://docuweave.io/services/${service.slug || ''}`,
         }}
       />
-      <div className="flex flex-col min-h-screen bg-bg-secondary dark:bg-navy-dark">
+      <div className="flex flex-col min-h-screen bg-navy-dark">
         <Navbar />
         <main className="flex-grow">
           {/* Hero Section */}

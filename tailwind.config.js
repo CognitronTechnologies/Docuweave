@@ -4,41 +4,41 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}"
   ],
-  darkMode: 'class', // Enable dark mode with a class
+  darkMode: 'class', // Always use dark mode
   theme: {
-    extend: {      colors: {
+    extend: {
+      colors: {
         navy: {
           DEFAULT: "#1e293b", // Slate-800 - main navy
           light: "#334155", // Slate-700 - lighter navy  
           dark: "#0f172a", // Slate-900 - darker navy
-          50: "#f8fafc",
-          100: "#f1f5f9",
-          200: "#e2e8f0"
+          50: "#1e293b",
+          100: "#1e293b",
+          200: "#1e293b"
         },
         primary: "#1e40af", // Blue-700 - professional blue
         accent: "#6366f1", // Indigo-500 - modern purple accent
-        light: "#f8fafc", // Slate-50 - very light background
-        dark: "#1e293b", // Slate-800 - dark text/backgrounds
+        dark: "#0A1F44", // Deep navy background
         white: {
           DEFAULT: "#ffffff",
           muted: "#f1f5f9" // Slate-100
         },
-        // Theme-aware background and text colors
+        // Only dark theme backgrounds and text
         bg: {
-          primary: "var(--bg-primary)",
-          secondary: "var(--bg-secondary)"
+          primary: "#0A1F44",
+          secondary: "#0f172a"
         },
         text: {
-          primary: "var(--text-primary)",
-          secondary: "var(--text-secondary)"
+          primary: "#f8fafc",
+          secondary: "#cbd5e1"
         },
         border: {
-          DEFAULT: "var(--border-color)"
+          DEFAULT: "#475569"
         }
       },
       fontFamily: {
         sans: ["Inter", "Arial", "sans-serif"],
-        heading: ["Poppins", "sans-serif"]
+        heading: ["Poppins", "Inter", "Arial", "sans-serif"]
       },
       spacing: {
         '18': '4.5rem',
