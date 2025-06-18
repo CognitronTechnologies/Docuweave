@@ -17,8 +17,6 @@ export default async function handler(req, res) {
   let submissionId = null;
 
   try {
-    console.log('📨 Processing contact form submission...');
-    
     // Parse form data including files
     const form = formidable({
       uploadDir: './uploads',
@@ -38,13 +36,6 @@ export default async function handler(req, res) {
       message: Array.isArray(fields.message) ? fields.message[0] : fields.message,
     };
 
-    console.log('📝 Form data received:', {
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      reason: formData.reason
-    });
-
     // Process attachments
     const attachments = [];
     if (files.attachments) {
@@ -52,7 +43,6 @@ export default async function handler(req, res) {
       
       for (const file of fileArray) {
         if (file && file.size > 0) {
-          console.log(`📎 Processing attachment: ${file.originalFilename} (${file.size} bytes)`);
           
           // Ensure uploads directory exists
           const uploadsDir = path.join(process.cwd(), 'uploads');
@@ -83,14 +73,11 @@ export default async function handler(req, res) {
     // Step 1: Save to Supabase Database (Primary storage)
     let databaseResult = null;
     try {
-      console.log('💾 Saving to Supabase database...');
       databaseResult = await contactService.saveSubmission(submission);
       submissionId = databaseResult.id;
-      console.log('✅ Successfully saved to database with ID:', submissionId);
 
       // Step 2: Upload attachments to Supabase Storage
       if (attachments.length > 0 && submissionId) {
-        console.log('📎 Uploading attachments to Supabase Storage...');
         for (const attachment of attachments) {
           try {
             const fileBuffer = fs.readFileSync(attachment.path);
@@ -101,14 +88,12 @@ export default async function handler(req, res) {
               attachment.mimetype
             );
           } catch (uploadError) {
-            console.error(`❌ Failed to upload ${attachment.originalName}:`, uploadError);
             // Continue with other attachments
           }
         }
       }
 
     } catch (dbError) {
-      console.error('❌ Database save failed:', dbError);
       // Continue with fallback storage
     }
 
@@ -129,9 +114,7 @@ export default async function handler(req, res) {
       });
       
       fs.writeFileSync(submissionsFile, JSON.stringify(submissions, null, 2));
-      console.log('✅ Submission saved to local backup');
     } catch (backupError) {
-      console.error('❌ Local backup failed:', backupError);
       // Continue with email sending
     }
 
@@ -143,15 +126,13 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('❌ Error processing contact form:', error);
     
     // Try to cleanup files on error
     if (submissionId) {
       try {
         // If we have a submission ID but failed later, log it for manual cleanup
-        console.log(`⚠️ Partial submission created with ID: ${submissionId}`);
       } catch (cleanupError) {
-        console.error('❌ Cleanup error:', cleanupError);
+        // Ignore cleanup errors
       }
     }
 

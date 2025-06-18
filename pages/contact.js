@@ -77,31 +77,31 @@ export default function Contact() {
       <SEO
         title="Contact Docuweave | Start Your Documentation Project"
         description="Get in touch with Docuweave’s technical writing experts. Request a quote, ask a question, or start your documentation project today."
-        canonical="https://yourdomain.com/contact"
+        canonical="https://docuweave.io/contact"
         openGraph={{
           title: 'Contact Docuweave | Start Your Documentation Project',
           description: 'Get in touch with Docuweave’s technical writing experts. Request a quote, ask a question, or start your documentation project today.',
-          url: 'https://yourdomain.com/contact',
+          url: 'https://docuweave.io/contact',
           type: 'website',
         }}
         schemaType="ContactPage"
         schemaData={{
           name: 'Contact Docuweave',
           description: 'Get in touch with Docuweave’s technical writing experts. Request a quote, ask a question, or start your documentation project today.',
-          url: 'https://yourdomain.com/contact',
+          url: 'https://docuweave.io/contact',
           publisher: {
             '@type': 'Organization',
             name: 'Docuweave',
-            url: 'https://yourdomain.com',
+            url: 'https://docuweave.io',
           },
         }}
       />
-      <div className="bg-bg-secondary dark:bg-navy-dark min-h-screen flex flex-col">
+      <div className="bg-navy-dark min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1 max-w-xl mx-auto py-12 px-4">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-primary dark:text-white text-center">Contact us</h1>
           <p className="text-text-secondary dark:text-gray-300 text-center mb-8 text-lg">
-            Interested in partnering with Docuweave or have a question? Fill out the form and our team will get back to you promptly.
+            Interested in partnering with Docuweave or have a question? Fill out the form and someone from our team will get back to you.
           </p>
           {submitted ? (
             <div className="bg-green-600 dark:bg-green-700 text-white p-6 rounded-lg shadow text-center text-lg font-semibold">
@@ -246,7 +246,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full bg-primary hover:bg-accent dark:bg-accent dark:hover:bg-primary text-white rounded-lg py-3 font-bold text-lg shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-primary to-accent dark:from-accent dark:to-primary text-white rounded-lg py-3 font-bold text-lg shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed border border-primary/30 dark:border-accent/40 hover:from-accent hover:to-primary dark:hover:from-primary dark:hover:to-accent"
               >
                 {submitting ? 'Sending...' : 'Send Message'}
               </button>

@@ -56,14 +56,18 @@ const iconMap = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-bg-secondary dark:bg-navy-dark">
+    <div className="relative min-h-screen bg-navy-dark">
       <SEO
         title="Technical Writing & Developer Docs Agency | Docuweave"
         description="We help software teams create clear, useful developer documentation. API docs, onboarding, content strategy, and more."
-        url="https://yourdomain.com"
-        image="https://yourdomain.com/og-image.png"
+        url="https://docuweave.io"
+        image="https://docuweave.io/og-image.png"
       />
       <Navbar />
+      {/* Gradient overlay background for hero section */}
+      <div className="absolute top-0 left-0 w-full h-[480px] z-0">
+        <div className="w-full h-full bg-gradient-to-b from-[#0A1F44] to-[#232526] opacity-90"></div>
+      </div>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-30 dark:opacity-20 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>

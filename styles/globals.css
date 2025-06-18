@@ -1,27 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Light theme - default */
-body {
-  font-family: 'Inter', Arial, sans-serif;
+/* Dark theme - enforced */
+html, body {
+  @apply font-sans;
+  background-color: #1e293b;
+  color: #f8fafc;
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Light mode colors */
-:root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --border-color: #e2e8f0;
-}
-
-/* Dark mode colors */
-html.dark {
+:root, html, body {
   --bg-primary: #1e293b;
   --bg-secondary: #0f172a;
   --text-primary: #f8fafc;
@@ -30,8 +23,8 @@ html.dark {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -57,14 +50,34 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #1e293b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #475569;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #334155;
+}
+
+/* Fix for Tailwind Typography (prose) list rendering */
+.prose ul, .prose ol {
+  margin-left: 1.5em;
+  list-style-position: outside;
+}
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+/* Force list styles for blog prose content */
+.prose ul, .prose ol {
+  list-style-type: disc !important;
+  margin-left: 2em !important;
+  padding-left: 0 !important;
+}
+.prose li {
+  display: list-item !important;
+  margin-bottom: 0.5em !important;
 }
