@@ -1,32 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Dark theme - enforced */
+/* White theme - enforced */
 html, body {
   @apply font-sans;
-  background-color: #1e293b;
-  color: #f8fafc;
+  font-family: 'DM Sans', Inter, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000; /* Pure black for sharper text */
   line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 :root, html, body {
-  --bg-primary: #1e293b;
-  --bg-secondary: #0f172a;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --border-color: #475569;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #000000;
+  --text-secondary: #1a1a1a;
+  --border-color: #e2e8f0;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-family: 'DM Sans', 'Inter', Arial, sans-serif;
   font-weight: 700;
   line-height: 1.2;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Links */
@@ -44,22 +51,37 @@ button {
   font-family: 'Inter', sans-serif;
 }
 
-/* Custom scrollbar */
+/* Additional typography utilities */
+.text-sharp {
+  color: #000000;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-extra-sharp {
+  color: #000000;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #e2e8f0;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #cbd5e1;
 }
 
 /* Fix for Tailwind Typography (prose) list rendering */

@@ -10,48 +10,33 @@ export default function Navbar() {
   const activePath = normalizePath(useActivePath());
   const services = [
     {
-      name: 'Product-ready docs',
-      href: '/services/core-documentation',
-      description: 'Launch-ready API docs, guides & tutorials'
+      name: 'Product Documentation',
+      href: '/services/product-documentation',
+      description: 'Developer-first docs that reduce support requests'
     },
     {
-      name: 'Scale team knowledge',
-      href: '/services/knowledge-management', 
-      description: 'Internal wikis & engineering playbooks'
+      name: 'Developer Marketing',
+      href: '/services/developer-marketing', 
+      description: 'Technical content that builds trust and grows community'
     },
     {
-      name: 'Dev-first content',
-      href: '/services/technical-content-marketing',
-      description: 'Developer blogs & technical storytelling'
-    },
-    {
-      name: 'Modern docs stack',
-      href: '/services/documentation-infrastructure',
-      description: 'Docs-as-code & AI-ready systems'
-    },
-    {
-      name: 'Optimize & scale',
-      href: '/services/content-strategy',
-      description: 'Audits, refactors & content strategy'
-    },
-    {
-      name: 'On-demand expertise',
-      href: '/services/custom-advisory',
-      description: 'Fractional & embedded support'
+      name: 'Modern Docs Stack',
+      href: '/services/modern-docs-stack',
+      description: 'Future-ready documentation infrastructure'
     }
   ];
 
   useEffect(() => {
-    // Enforce dark mode
-    document.documentElement.classList.add('dark');
+    // Remove any dark mode classes to ensure light theme
+    document.documentElement.classList.remove('dark');
   }, []);
 
   return (
-    <nav className="sticky top-0 bg-navy/80 backdrop-blur shadow z-30 border-b border-navy-light">
+    <nav className="sticky top-0 bg-white/90 backdrop-blur shadow z-30 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-heading text-2xl font-bold text-white tracking-tight h-16">
+          <Link href="/" className="flex items-center gap-2 font-heading text-2xl font-bold text-text-primary tracking-tight h-16">
             <img src="/dark-mode-logo.png" alt="Docuweave logo" className="h-full max-h-16 w-auto" />
             <span className="hidden sm:inline">Docuweave</span>
           </Link>
@@ -62,7 +47,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center gap-1 text-gray-300 hover:text-white font-medium transition"
+                className="flex items-center gap-1 text-text-secondary hover:text-text-primary font-medium transition"
                 onMouseEnter={() => setIsServicesOpen(true)}
               >
                 Services
@@ -72,7 +57,7 @@ export default function Navbar() {
               {/* Dropdown Menu */}
               {isServicesOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-80 bg-navy rounded-xl shadow-lg border border-navy-light z-50"
+                  className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-lg border border-border z-50"
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
                   <div className="p-4">
@@ -81,19 +66,19 @@ export default function Navbar() {
                         <Link
                           key={service.name}
                           href={service.href}
-                          className={`block p-3 rounded-lg hover:bg-navy-light transition-colors group ${activePath === service.href ? 'underline text-accent font-bold' : ''}`}
+                          className={`block p-3 rounded-lg hover:bg-light-secondary transition-colors group ${activePath === service.href ? 'underline text-accent font-bold' : ''}`}
                           onClick={() => setIsServicesOpen(false)}
                         >
-                          <div className="font-medium text-white group-hover:text-accent">
+                          <div className="font-medium text-text-primary group-hover:text-accent">
                             {service.name}
                           </div>
-                          <div className="text-sm text-gray-300 mt-1">
+                          <div className="text-sm text-text-secondary mt-1">
                             {service.description}
                           </div>
                         </Link>
                       ))}
                     </div>
-                    <div className="mt-4 pt-4 border-t border-navy-light">
+                    <div className="mt-4 pt-4 border-t border-border">
                       <Link
                         href="/#services"
                         className="block text-center py-2 px-4 bg-accent text-white rounded-lg hover:bg-primary transition font-medium"
@@ -107,10 +92,10 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="/about" className={`text-gray-300 hover:text-white font-medium transition ${activePath === '/about' ? 'underline text-accent font-bold' : ''}`}>
+            <Link href="/about" className={`text-text-secondary hover:text-text-primary font-medium transition ${activePath === '/about' ? 'underline text-accent font-bold' : ''}`}>
               About
             </Link>
-            <Link href="/blog" className={`text-gray-300 hover:text-white font-medium transition ${activePath === '/blog' ? 'underline text-accent font-bold' : ''}`}>
+            <Link href="/blog" className={`text-text-secondary hover:text-text-primary font-medium transition ${activePath === '/blog' ? 'underline text-accent font-bold' : ''}`}>
               Blog
             </Link>
             <Link href="/contact">
@@ -126,7 +111,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-3">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-white p-2"
+              className="text-text-secondary hover:text-text-primary p-2"
               aria-label="Open Menu"
             >
               {isMobileMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
@@ -136,17 +121,17 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-navy-light">
+          <div className="md:hidden border-t border-border">
             <div className="px-4 py-6 space-y-6">
               {/* Mobile Services */}
               <div>
-                <div className="text-white font-semibold mb-3">Services</div>
+                <div className="text-text-primary font-semibold mb-3">Services</div>
                 <div className="space-y-2 pl-4">
                   {services.map((service) => (
                     <Link
                       key={service.name}
                       href={service.href}
-                      className={`block py-2 text-gray-300 hover:text-white transition ${activePath === service.href ? 'underline text-accent font-bold' : ''}`}
+                      className={`block py-2 text-text-secondary hover:text-text-primary transition ${activePath === service.href ? 'underline text-accent font-bold' : ''}`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {service.name}
@@ -157,14 +142,14 @@ export default function Navbar() {
 
               <Link 
                 href="/about" 
-                className={`block py-2 text-gray-300 hover:text-white font-medium transition ${activePath === '/about' ? 'underline text-accent font-bold' : ''}`}
+                className={`block py-2 text-text-secondary hover:text-text-primary font-medium transition ${activePath === '/about' ? 'underline text-accent font-bold' : ''}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
                 href="/blog"
-                className={`block py-2 text-gray-300 hover:text-white font-medium transition ${activePath === '/blog' ? 'underline text-accent font-bold' : ''}`}
+                className={`block py-2 text-text-secondary hover:text-text-primary font-medium transition ${activePath === '/blog' ? 'underline text-accent font-bold' : ''}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
