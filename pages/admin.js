@@ -45,9 +45,7 @@ export default function Admin() {
     try {
       const response = await fetch('/api/admin/submissions', {
         headers: {
-          'Authorization': `Bearer ${ADMIN_PASSWORD}`ul. +6]
-          .
-          
+          'Authorization': `Bearer ${ADMIN_PASSWORD}`
         }
       })
       if (response.ok) {
