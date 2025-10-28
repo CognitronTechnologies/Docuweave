@@ -4,41 +4,42 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}"
   ],
-  darkMode: 'class', // Always use dark mode
+  darkMode: 'class', // Light mode by default
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#1e293b", // Slate-800 - main navy
-          light: "#334155", // Slate-700 - lighter navy  
-          dark: "#0f172a", // Slate-900 - darker navy
-          50: "#1e293b",
-          100: "#1e293b",
-          200: "#1e293b"
+        // Light theme color scheme
+        light: {
+          DEFAULT: "#ffffff", // White - main background
+          secondary: "#f8fafc", // Slate-50 - secondary background  
+          tertiary: "#f1f5f9", // Slate-100 - tertiary background
+          50: "#ffffff",
+          100: "#f8fafc",
+          200: "#f1f5f9"
         },
         primary: "#1e40af", // Blue-700 - professional blue
         accent: "#6366f1", // Indigo-500 - modern purple accent
-        dark: "#0A1F44", // Deep navy background
+        secondary: "#64748b", // Slate-500 - secondary text
         white: {
           DEFAULT: "#ffffff",
-          muted: "#f1f5f9" // Slate-100
+          muted: "#f8fafc" // Slate-50
         },
-        // Only dark theme backgrounds and text
+        // Light theme backgrounds and text
         bg: {
-          primary: "#0A1F44",
-          secondary: "#0f172a"
+          primary: "#ffffff",
+          secondary: "#f8fafc"
         },
         text: {
-          primary: "#f8fafc",
-          secondary: "#cbd5e1"
+          primary: "#000000", // Pure black for primary text
+          secondary: "#1a1a1a" // Very dark gray for secondary text
         },
         border: {
-          DEFAULT: "#475569"
+          DEFAULT: "#e2e8f0" // Slate-200 - light borders
         }
       },
       fontFamily: {
-        sans: ["Inter", "Arial", "sans-serif"],
-        heading: ["Poppins", "Inter", "Arial", "sans-serif"]
+        sans: ["DM Sans", "Inter", "Arial", "sans-serif"],
+        heading: ["DM Sans", "Poppins", "Inter", "sans-serif"]
       },
       spacing: {
         '18': '4.5rem',

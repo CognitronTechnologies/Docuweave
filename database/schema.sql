@@ -76,26 +76,30 @@ CREATE POLICY "Users can read attachments" ON contact_attachments
     FOR SELECT USING (true);
 
 -- Create a view for easy querying with attachments
-CREATE OR REPLACE VIEW contact_submissions_with_attachments AS
-SELECT 
-    cs.*,
-    COALESCE(
-        json_agg(
-            json_build_object(
-                'id', ca.id,
-                'original_name', ca.original_name,
-                'public_url', ca.public_url,
-                'file_size', ca.file_size,
-                'mime_type', ca.mime_type,
-                'uploaded_at', ca.uploaded_at
-            )
-        ) FILTER (WHERE ca.id IS NOT NULL), 
-        '[]'::json
-    ) AS attachments
-FROM contact_submissions cs
-LEFT JOIN contact_attachments ca ON cs.id = ca.submission_id
-GROUP BY cs.id, cs.name, cs.email, cs.subject, cs.reason, cs.message, cs.status, cs.ip_address, cs.user_agent, cs.attachments_count, cs.created_at, cs.updated_at
+-- (Recreated with security_invoker & security_barrier for least privilege)
+CREATE OR REPLACE VIEW public.contact_submissions_with_attachments
+WITH (security_invoker=true, security_barrier=true) AS
+SELECT
+  cs.*,
+  COALESCE(
+    json_agg(json_build_object(
+      'id', ca.id,
+      'original_name', ca.original_name,
+      'public_url', ca.public_url,
+      'file_size', ca.file_size,
+      'mime_type', ca.mime_type,
+      'uploaded_at', ca.uploaded_at
+    )) FILTER (WHERE ca.id IS NOT NULL),
+    '[]'::json
+  ) AS attachments
+FROM public.contact_submissions cs
+LEFT JOIN public.contact_attachments ca ON cs.id = ca.submission_id
+GROUP BY cs.id
 ORDER BY cs.created_at DESC;
+
+-- Tighten view privileges (adjust if you truly need client access)
+REVOKE ALL ON VIEW public.contact_submissions_with_attachments FROM public, anon, authenticated;
+GRANT SELECT ON VIEW public.contact_submissions_with_attachments TO service_role;
 
 -- Insert sample data (optional - remove in production)
 -- INSERT INTO contact_submissions (name, email, subject, reason, message) 
@@ -103,4 +107,4 @@ ORDER BY cs.created_at DESC;
 
 COMMENT ON TABLE contact_submissions IS 'Stores contact form submissions from the website';
 COMMENT ON TABLE contact_attachments IS 'Stores file attachments linked to contact submissions';
-COMMENT ON VIEW contact_submissions_with_attachments IS 'View that joins submissions with their attachments for easy querying';
+COMMENT ON VIEW contact_submissions_with_attachments IS 'Secure view (security_invoker, security_barrier) joining submissions with their attachments for server-side querying';
