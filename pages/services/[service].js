@@ -76,7 +76,7 @@ export default function ServicePage({ service }) {
           {service.targetAudience && (
             <section className="bg-light-secondary py-16">
               <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">👥 Perfect For</h2>
+                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">Perfect for</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {service.targetAudience.map((audience, index) => (
                     <div key={index} className="bg-white border border-border rounded-xl p-6 shadow-card text-center hover:shadow-card-hover transition-shadow">
@@ -92,7 +92,7 @@ export default function ServicePage({ service }) {
           {service.problemsSolved && (
             <section className="bg-white py-16">
               <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">🔥 Sounds familiar?</h2>
+                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">Sounds familiar?</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {service.problemsSolved.map((problem, index) => (
                     <div key={index} className="bg-red-50 border border-red-200 rounded-xl p-6 shadow-card">
@@ -146,39 +146,11 @@ export default function ServicePage({ service }) {
             </section>
           )}
 
-          {/* Timeline, Add-ons */}
-          {(service.timeline || service.addOns) && (
-            <section className="bg-light-secondary py-16">
-              <div className="max-w-6xl mx-auto px-4">
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Timeline */}
-                  {service.timeline && (
-                    <div className="bg-white border border-border rounded-xl p-6 shadow-card">
-                      <h3 className="text-xl font-heading font-bold text-text-primary mb-4">⏱️ Timeline</h3>
-                      <p className="text-text-primary font-medium">{service.timeline}</p>
-                    </div>
-                  )}
-                  {/* Add-ons */}
-                  {service.addOns && (
-                    <div className="bg-white border border-border rounded-xl p-6 shadow-card">
-                      <h3 className="text-xl font-heading font-bold text-text-primary mb-4">✅ Add-ons</h3>
-                      <ul className="space-y-2">
-                        {service.addOns.map((addon, index) => (
-                          <li key={index} className="text-text-secondary text-sm leading-relaxed">• {addon}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Outcomes */}
+          {/* Key Outcomes */}
           {service.outcomes && (
             <section className="bg-white py-16">
               <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">🎯 Key Outcomes</h2>
+                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">Key outcomes</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {service.outcomes.map((outcome, index) => (
                     <div key={index} className="bg-green-50 border border-green-200 rounded-xl p-6 shadow-card">
@@ -194,7 +166,7 @@ export default function ServicePage({ service }) {
           {service.testimonial && (
             <section className="bg-light-secondary py-16">
               <div className="max-w-4xl mx-auto px-4">
-                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">💬 What clients say</h2>
+                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">What clients say</h2>
                 <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-8 text-center border border-primary/20 shadow-card">
                   <blockquote className="text-xl text-text-primary italic mb-4 leading-relaxed">
                     "{service.testimonial.quote}"

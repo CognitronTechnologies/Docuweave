@@ -2,25 +2,26 @@ import Navbar from '../components/Navbar'
 import SEO from '../components/SEO'
 import { BookOpenIcon, CodeBracketIcon, AdjustmentsHorizontalIcon, ClipboardDocumentCheckIcon, GlobeAltIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 // Use string keys for icons, not JSX, to ensure serializability
 const services = [
   {
     icon: 'document',
-    title: 'Product Documentation',
+    title: 'Product documentation',
     desc: 'Create developer-first, launch-ready docs that reduce support requests and help users succeed from day one.',
     link: '/services/product-documentation',
   },
   {
     icon: 'rocket',
-    title: 'Developer Marketing',
-    desc: 'Technical content that builds trust and grows your developer community—content that actually gets read and shared.',
+    title: 'Developer marketing',
+    desc: 'Technical content that builds trust and grows your developer community. Content that actually gets read and shared.',
     link: '/services/developer-marketing',
   },
   {
     icon: 'stack',
-    title: 'Modern Docs Stack',
+    title: 'Modern docs stack',
     desc: 'Build future-ready documentation infrastructure with scalable, developer-friendly systems and AI-ready workflows.',
     link: '/services/modern-docs-stack',
   },
@@ -33,12 +34,28 @@ const iconMap = {
   'stack': <AdjustmentsHorizontalIcon className="w-8 h-8 text-green-500" />,
 }
 
+const rotatingPhrases = [
+  "deliver impact",
+  "developers trust",
+  "drive adoption"
+]
+
 export default function Home() {
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhraseIndex((prev) => (prev + 1) % rotatingPhrases.length)
+    }, 3000) // Change every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div className="relative min-h-screen bg-white">
       <SEO
-        title="Technical Writing & Developer Docs Agency | Docuweave"
-        description="Docs That Deliver Impact. DocuWeave crafts technical documentation that cuts support, boosts adoption, and scales with your product. Get a free audit"
+        title="Technical Writing & Documentation Services | Docuweave"
+        description="Expert technical writers who turn complex products into clear documentation. We help SaaS and developer tools reduce support tickets, accelerate adoption, and scale docs systems."
         url="https://docuweave.io"
         image="https://docuweave.io/og-image.png"
       />
@@ -55,12 +72,28 @@ export default function Home() {
       </div>
       <main className="relative z-10 max-w-7xl mx-auto px-4 py-20">
         <section className="mb-16 text-center">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold text-text-primary mb-3 drop-shadow-sm">
-            <span className="text-6xl md:text-7xl text-accent block mb-2">Docuweave</span>
-            Docs that deliver impact
+          <h1 className="font-heading font-bold mb-6">
+            <span className="text-5xl md:text-6xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block mb-4">
+              Docuweave
+            </span>
+            <span className="text-4xl md:text-5xl text-text-primary block mb-2">
+              Docs that{" "}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentPhraseIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-extrabold"
+                >
+                  {rotatingPhrases[currentPhraseIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
-            Crafting documentation that reduces support requests, accelerates adoption, and scales with your product.
+            Expert technical writing that turns complex products into clear documentation. Less support tickets, faster adoption, happier developers.
           </p>
         </section>
         <div id="services" className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -80,7 +113,10 @@ export default function Home() {
         <section className="text-center px-6 py-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl shadow-card mt-20 max-w-3xl mx-auto border border-primary/20">
           <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-2">Ready to ship docs that drive growth?</h2>
           <p className="mb-6 text-text-secondary leading-relaxed">Let's discuss your project and create documentation that accelerates your product's success.</p>
-          <Link href="/contact" className="inline-block bg-primary hover:bg-accent text-white py-3 px-10 rounded-full font-bold text-lg shadow-lg transition duration-150 hover:transform hover:scale-105">Start your project</Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="inline-block bg-primary hover:bg-accent text-white py-3 px-10 rounded-full font-bold text-lg shadow-lg transition duration-150 hover:transform hover:scale-105">Start your project</Link>
+            <a href="mailto:dickson@docuweave.io" className="inline-block bg-white hover:bg-gray-50 text-primary border-2 border-primary py-3 px-10 rounded-full font-bold text-lg shadow-lg transition duration-150 hover:transform hover:scale-105">Send us an email</a>
+          </div>
         </section>
       </main>
     </div>

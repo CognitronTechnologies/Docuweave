@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
+import Head from 'next/head'
 import { DocumentTextIcon, PaperClipIcon, CalendarIcon, UserIcon, EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 
 export default function Admin() {
@@ -76,6 +77,10 @@ export default function Admin() {
   }
   return (
     <div className="min-h-screen bg-white">
+      <Head>
+        <title>Admin - Contact Submissions | Docuweave</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
       <Navbar />
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="mb-8 flex items-center justify-between">
