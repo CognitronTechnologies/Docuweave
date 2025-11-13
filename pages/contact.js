@@ -105,8 +105,11 @@ export default function Contact() {
         <Navbar />
         <main className="flex-1 max-w-xl mx-auto py-12 px-4">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-text-primary text-center">Book a free consultation</h1>
-          <p className="text-text-secondary text-center mb-8 text-lg">
+          <p className="text-text-secondary text-center mb-4 text-lg">
             Interested in partnering with Docuweave or have a question? Feel free to reach out - we'd love to connect.
+          </p>
+          <p className="text-text-secondary text-center mb-8 text-base">
+            Prefer email? Reach us directly at <a href="mailto:dickson@docuweave.io" className="text-primary hover:text-accent font-semibold underline">dickson@docuweave.io</a>
           </p>
           {submitted ? (
             <div className="bg-green-600 text-white p-6 rounded-lg shadow text-center text-lg font-semibold">

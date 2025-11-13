@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar'
+﻿import Navbar from '../components/Navbar'
 import Link from 'next/link'
 import SEO from '../components/SEO'
 
@@ -46,67 +46,24 @@ export default function About() {
               At Docuweave, we help product teams turn documentation into a strategic advantage. Whether you're launching your first API or scaling a platform, we create high-quality, usable documentation — we go beyond writing; we help you build documentation systems that evolve alongside your product, team, and tech stack.
             </p>
 
-            {/* --- Docuweave Story: Numbered Story Blocks --- */}
-            <div className="max-w-6xl mx-auto px-4 pt-4 md:pt-6 pb-2 md:pb-4">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-6 text-center">Our story: from pain point to purpose</h2>
+            {/* Our Story */}
+            <div className="max-w-4xl mx-auto px-4 py-12">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-8 text-center">Our story</h2>
+              
+              <div className="prose prose-lg max-w-none text-text-secondary space-y-6">
+                <p>
+                  We started Docuweave after seeing too many great products lose developer trust, not because of bad code, but because of rushed, outdated, or incomplete documentation. We kept running into the same patterns: docs written under deadline pressure, maintained barely by overworked engineers, treated as one-time deliverables rather than living product assets, disconnected from product planning and release cycles, and difficult to scale across teams and time zones.
+                </p>
+                
+                <p>
+                  We believe documentation should be treated like code: planned, maintained, and evolved. From the first planning doc to the final release note, docs should grow with your product and serve as a strategic layer of the developer experience.
+                </p>
+                
+                <p>
+                  That's why we built Docuweave: to bring clarity, consistency, and craftsmanship to developer documentation. We help teams build systems that scale with their products and earn developer trust at every step. Because great documentation isn't just helpful, it's a competitive advantage.
+                </p>
+              </div>
             </div>
-
-            {/* Block 1: The Problem We Saw */}
-            <section className="w-full py-12 md:py-16 flex flex-col items-center border-b border-border bg-white">
-              <div className="max-w-3xl w-full px-4 flex flex-col items-start">
-                <h3 className="flex items-center mb-2 text-2xl md:text-3xl font-heading font-bold">
-                  <span className="text-4xl font-extrabold text-accent mr-3">#1</span>
-                  <span className="text-yellow-600">The problem we saw</span>
-                </h3>
-                <p className="text-lg text-text-secondary mb-2">We started Docuweave after seeing too many great products lose developer trust—not because of bad code, but because of rushed, outdated, or incomplete documentation.</p>
-              </div>
-            </section>
-
-            {/* Block 2: The Patterns We Saw */}
-            <section className="w-full py-12 md:py-16 flex flex-col items-center border-b border-border bg-light-secondary">
-              <div className="max-w-3xl w-full px-4 flex flex-col items-start">
-                <h3 className="flex items-center mb-2 text-2xl md:text-3xl font-heading font-bold">
-                  <span className="text-4xl font-extrabold text-accent mr-3">#2</span>
-                  <span className="text-red-700">The patterns we saw</span>
-                </h3>
-                <p className="text-lg text-text-secondary mb-2">We kept running into the same issues across teams:</p>
-                <ul className="grid grid-cols-1 gap-2 text-lg text-text-secondary pl-0 text-left mb-2">
-                  <li className="flex items-center gap-2"><span>🕒</span>Docs written under deadline pressure</li>
-                  <li className="flex items-center gap-2"><span>🧑‍💻</span>Maintained (barely) by overworked engineers</li>
-                  <li className="flex items-center gap-2"><span>📄</span>Treated as a one-time deliverable, not a living product asset</li>
-                  <li className="flex items-center gap-2"><span>🔌</span>Disconnected from product planning and release cycles</li>
-                  <li className="flex items-center gap-2"><span>🧩</span>Lacking structure, consistency, or ownership</li>
-                  <li className="flex items-center gap-2"><span>🌍</span>Difficult to scale across teams, tools, and time zones</li>
-                </ul>
-              </div>
-            </section>
-
-            {/* Block 3: What We Believe */}
-            <section className="w-full py-12 md:py-16 flex flex-col items-center border-b border-border bg-white">
-              <div className="max-w-3xl w-full px-4 flex flex-col items-start">
-                <h3 className="flex items-center mb-2 text-2xl md:text-3xl font-heading font-bold">
-                  <span className="text-4xl font-extrabold text-accent mr-3">#3</span>
-                  <span className="text-blue-700">What we believe</span>
-                </h3>
-                <p className="text-lg text-text-secondary mb-2">We believe documentation should be treated like code—planned, maintained, and evolved. From the first planning doc to the final release note, docs should grow with your product and serve as a strategic layer of the developer experience.</p>
-              </div>
-            </section>
-
-            {/* Block 4: Why We Built Docuweave */}
-            <section className="w-full py-12 md:py-16 flex flex-col items-center bg-light-secondary">
-              <div className="max-w-3xl w-full px-4 flex flex-col items-start">
-                <h3 className="flex items-center mb-2 text-2xl md:text-3xl font-heading font-bold">
-                  <span className="text-4xl font-extrabold text-accent mr-3">#4</span>
-                  <span className="text-green-700">Why we built Docuweave</span>
-                </h3>
-                <ul className="list-disc list-inside text-lg text-text-primary space-y-1 pl-4 text-left mb-2">
-                  <li>To bring clarity, consistency, and craftsmanship to developer documentation.</li>
-                  <li>To build partnerships and processes for delivering usable technical content.</li>
-                  <li>To build systems that scale with your product—and earn developer trust at every step.</li>
-                  <li>Because great documentation isn’t just helpful—it’s a competitive advantage.</li>
-                </ul>
-              </div>
-            </section>
           </section>
 
           {/* What We Do */}
@@ -120,17 +77,17 @@ export default function About() {
                 {[
                   {
                     number: "1",
-                    title: "Product Documentation",
+                    title: "Product documentation",
                     desc: "Launch-ready API references, integration guides, SDK tutorials, and changelogs that scale with your product."
                   },
                   {
                     number: "2", 
-                    title: "Developer Marketing",
-                    desc: "Technical content that builds trust and grows your developer community—content that actually gets read and shared."
+                    title: "Developer marketing",
+                    desc: "Technical content that builds trust and grows your developer community. Content that actually gets read and shared."
                   },
                   {
                     number: "3",
-                    title: "Modern Docs Stack", 
+                    title: "Modern docs stack", 
                     desc: "Build future-ready documentation infrastructure with scalable, developer-friendly systems and AI-ready workflows."
                   }
                 ].map((service) => (
@@ -154,7 +111,7 @@ export default function About() {
           {/* Who We Help */}
           <section className="bg-white py-16">
             <div className="max-w-6xl mx-auto px-4">            <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-8 text-center">
-                We partner with:
+                We partner with
               </h2>
                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {[
@@ -222,7 +179,7 @@ export default function About() {
           <section className="bg-light-secondary py-16">
             <div className="max-w-6xl mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-8 text-center">
-                Docuweave Principles
+                Docuweave principles
               </h2>
               <p className="text-lg text-text-secondary mb-8 text-center max-w-3xl mx-auto">
                 At DocuWeave, these core beliefs guide every doc we craft:
@@ -231,33 +188,33 @@ export default function About() {
                 {[
                   {
                     icon: "🧑‍💻",
-                    title: "Empathy for Users, Precision for Devs",
-                    desc: "We design with empathy for users and build with technical accuracy—bridging clarity and code to improve adoption and usability."
+                    title: "Empathy for users, precision for devs",
+                    desc: "We design with empathy for users and build with technical accuracy, bridging clarity and code to improve adoption and usability."
                   },
                   {
                     icon: "🪄",
-                    title: "Clarity That Converts",
-                    desc: "Clear, concise docs reduce support tickets, increase product adoption, and build trust—because great content drives real results."
+                    title: "Clarity that converts",
+                    desc: "Clear, concise docs reduce support tickets, increase product adoption, and build trust because great content drives real results."
                   },
                   {
                     icon: "📈",
-                    title: "Scalable by Design",
-                    desc: "We build documentation systems that grow with your product, team, and tech stack—ensuring long-term efficiency and consistency."
+                    title: "Scalable by design",
+                    desc: "We build documentation systems that grow with your product, team, and tech stack, ensuring long-term efficiency and consistency."
                   },
                   {
                     icon: "🤝",
-                    title: "Embedded Partnership",
-                    desc: "We don’t just deliver docs—we integrate with your team to co-create, iterate, and scale together."
+                    title: "Embedded partnership",
+                    desc: "We don't just deliver docs. We integrate with your team to co-create, iterate, and scale together."
                   },
                   {
                     icon: "🔄",
-                    title: "Evolving with You",
-                    desc: "Your product changes fast—so should your docs. We build living systems that adapt to new features, feedback, and user needs."
+                    title: "Evolving with you",
+                    desc: "Your product changes fast, so should your docs. We build living systems that adapt to new features, feedback, and user needs."
                   },
                   {
                     icon: "🧠",
-                    title: "Driven by Insight",
-                    desc: "We use data, feedback, and usage analytics to continuously refine documentation—ensuring it stays relevant, effective, and impactful."
+                    title: "Driven by insight",
+                    desc: "We use data, feedback, and usage analytics to continuously refine documentation, ensuring it stays relevant, effective, and impactful."
                   }
                 ].map((p) => (
                   <div
@@ -273,29 +230,6 @@ export default function About() {
             </div>
           </section>
 
-          {/* Testimonials */}
-          <section className="bg-white py-16">
-            <div className="max-w-6xl mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-8 text-center">
-                💬 What Clients Say
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-8 border border-primary/20 shadow-card">
-                  <blockquote className="text-lg text-text-primary italic mb-4 leading-relaxed">
-                    "Working with Docuweave felt like adding a senior docs team overnight. WWe moved faster, with less confusion, and better outcomes."
-                  </blockquote>
-                  <cite className="text-accent font-semibold">— CTO, Developer Tools Startup</cite>
-                </div>
-                <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-8 border border-primary/20 shadow-card">
-                  <blockquote className="text-lg text-text-primary italic mb-4 leading-relaxed">
-                    "Our API adoption tripled after we cleaned up our documentation with Docuweave's help."
-                  </blockquote>
-                  <cite className="text-accent font-semibold">— Head of Product, Fintech Platform</cite>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* CTA Section */}
           <section className="bg-primary text-white py-16">
             <div className="max-w-4xl mx-auto px-4 text-center">
@@ -303,9 +237,13 @@ export default function About() {
               <p className="text-xl mb-8 opacity-90 leading-relaxed">
                 Whether you're launching, scaling, or modernizing your docs—we're ready.
               </p>
-              <div className="grid md:grid-cols-2 gap-4">              <Link href="/contact" className="inline-block bg-white/20 hover:bg-white/30 text-white py-4 px-6 rounded-full font-bold text-lg transition border border-white/30 hover:border-white/50">
+              <div className="grid md:grid-cols-3 gap-4">
+                <Link href="/contact" className="inline-block bg-white/20 hover:bg-white/30 text-white py-4 px-6 rounded-full font-bold text-lg transition border border-white/30 hover:border-white/50">
                   📅 Book a discovery call
                 </Link>
+                <a href="mailto:dickson@docuweave.io" className="inline-block bg-white/20 hover:bg-white/30 text-white py-4 px-6 rounded-full font-bold text-lg transition border border-white/30 hover:border-white/50">
+                  ✉️ Send us an email
+                </a>
                 <Link href="/#services" className="inline-block bg-white/20 hover:bg-white/30 text-white py-4 px-6 rounded-full font-bold text-lg transition border border-white/30 hover:border-white/50">
                   📄 View services
                 </Link>
@@ -323,33 +261,33 @@ export default function About() {
 const results = [
   {
     icon: "🎧",
-    title: "Lower Support Volume",
+    title: "Lower support volume",
     desc: "Reduce repetitive tickets by empowering users with clear, self-serve documentation."
   },
   {
     icon: "⏱️",
-    title: "Faster Developer Onboarding",
+    title: "Faster developer onboarding",
     desc: "Help developers get productive quickly with intuitive guides and first-use flows."
   },
   {
     icon: "🚀",
-    title: "Higher API & SDK Adoption",
+    title: "Higher API and SDK adoption",
     desc: "Drive engagement and usage with well-structured, discoverable, and actionable content."
   },
   {
     icon: "📅",
-    title: "Shorter Time-to-Market",
-    desc: "Accelerate launches with documentation that’s ready when your product is."
+    title: "Shorter time-to-market",
+    desc: "Accelerate launches with documentation that's ready when your product is."
   },
   {
     icon: "🌱",
-    title: "Sustainable Documentation Systems",
+    title: "Sustainable documentation systems",
     desc: "Build scalable, governed content ecosystems that grow with your product and team."
   },
   {
     icon: "🤝",
-    title: "Aligned Teams, Aligned Outcomes",
-    desc: "Centralized documentation keeps cross-functional teams in sync—reducing miscommunication and speeding up execution."
+    title: "Aligned teams, aligned outcomes",
+    desc: "Centralized documentation keeps cross-functional teams in sync, reducing miscommunication and speeding up execution."
   }
 ];
 

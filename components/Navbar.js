@@ -32,13 +32,13 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 bg-white/90 backdrop-blur shadow z-30 border-b border-border">
+    <nav className="sticky top-0 bg-gradient-to-r from-white via-blue-50 to-indigo-50 backdrop-blur shadow-md z-30 border-b border-blue-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-heading text-2xl font-bold text-text-primary tracking-tight h-16">
-            <img src="/dark-mode-logo.png" alt="Docuweave logo" className="h-full max-h-16 w-auto" />
-            <span className="hidden sm:inline">Docuweave</span>
+          <Link href="/" className="flex items-center gap-2 font-heading text-2xl font-bold tracking-tight h-16">
+            <img src="/new-dark-mode-logo.PNG" alt="Docuweave - Technical Documentation Services for SaaS and Developer Tools" className="h-full max-h-16 w-auto" />
+            <span className="hidden sm:inline bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Docuweave</span>
           </Link>
 
           {/* Desktop Navigation */}

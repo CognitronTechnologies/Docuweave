@@ -17,8 +17,8 @@ module.exports = {
           100: "#f8fafc",
           200: "#f1f5f9"
         },
-        primary: "#1e40af", // Blue-700 - professional blue
-        accent: "#6366f1", // Indigo-500 - modern purple accent
+        primary: "#0ea5e9", // Sky-500 - vibrant cyan/teal from logo
+        accent: "#a855f7", // Purple-500 - vibrant purple/magenta from logo
         secondary: "#64748b", // Slate-500 - secondary text
         white: {
           DEFAULT: "#ffffff",
