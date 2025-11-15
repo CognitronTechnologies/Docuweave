@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar'
 import SEO from '../components/SEO'
-import { BookOpenIcon, CodeBracketIcon, AdjustmentsHorizontalIcon, ClipboardDocumentCheckIcon, GlobeAltIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline'
+import { BookOpenIcon, CodeBracketIcon, AdjustmentsHorizontalIcon, ClipboardDocumentCheckIcon, GlobeAltIcon, ArrowTrendingUpIcon, PencilSquareIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
@@ -25,6 +25,12 @@ const services = [
     desc: 'Build future-ready documentation infrastructure with scalable, developer-friendly systems and AI-ready workflows.',
     link: '/services/modern-docs-stack',
   },
+  {
+    icon: 'writer',
+    title: 'Hire technical writers',
+    desc: 'Get experienced technical writers who understand code and ship docs that drive adoption. Fast turnaround, transparent pricing.',
+    link: '/services/hire-technical-writer',
+  },
 ]
 
 // Icon mapping for rendering
@@ -32,6 +38,7 @@ const iconMap = {
   'document': <CodeBracketIcon className="w-8 h-8 text-primary" />,
   'rocket': <ArrowTrendingUpIcon className="w-8 h-8 text-accent" />,
   'stack': <AdjustmentsHorizontalIcon className="w-8 h-8 text-green-500" />,
+  'writer': <PencilSquareIcon className="w-8 h-8 text-purple-500" />,
 }
 
 const rotatingPhrases = [
@@ -46,7 +53,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPhraseIndex((prev) => (prev + 1) % rotatingPhrases.length)
-    }, 3000) // Change every 3 seconds
+    }, 4000) // Change every 3 seconds
 
     return () => clearInterval(interval)
   }, [])
@@ -54,8 +61,8 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-white">
       <SEO
-        title="Technical Writing & Documentation Services | Docuweave"
-        description="Expert technical writers who turn complex products into clear documentation. We help SaaS and developer tools reduce support tickets, accelerate adoption, and scale docs systems."
+        title=" Docuweave - Technical Writing & Documentation Services | Hire Technical Writers "
+        description="Hire experienced technical writers with engineering backgrounds. We create API documentation, developer guides, and product docs for SaaS companies. Reduce support tickets and accelerate adoption with professional documentation services."
         url="https://docuweave.io"
         image="https://docuweave.io/og-image.png"
       />
@@ -96,7 +103,7 @@ export default function Home() {
             Expert technical writing that turns complex products into clear documentation. Less support tickets, faster adoption, happier developers.
           </p>
         </section>
-        <div id="services" className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div id="services" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map(s => (
             <div key={s.title}
               className="bg-white border border-border rounded-2xl p-8 shadow-card flex flex-col items-start gap-3 hover:scale-[1.03] hover:shadow-card-hover transition duration-200 cursor-pointer group"

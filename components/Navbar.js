@@ -10,19 +10,24 @@ export default function Navbar() {
   const activePath = normalizePath(useActivePath());
   const services = [
     {
-      name: 'Product Documentation',
+      name: 'Product documentation',
       href: '/services/product-documentation',
       description: 'Developer-first docs that reduce support requests'
     },
     {
-      name: 'Developer Marketing',
+      name: 'Developer marketing',
       href: '/services/developer-marketing', 
       description: 'Technical content that builds trust and grows community'
     },
     {
-      name: 'Modern Docs Stack',
+      name: 'Modern docs stack',
       href: '/services/modern-docs-stack',
       description: 'Future-ready documentation infrastructure'
+    },
+    {
+      name: 'Hire technical writers',
+      href: '/services/hire-technical-writer',
+      description: 'Engineers who write docs developers actually use'
     }
   ];
 
