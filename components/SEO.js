@@ -8,7 +8,7 @@ export default function SEO({
   title = 'Docuweave | Technical Writing & Developer Docs Consultancy',
   description = 'We help software teams create clear, useful developer documentation. API docs, onboarding, content strategy, and more.',
   url = 'https://docuweave.io',
-  image = 'https://docuweave.io/og-image.png',
+  image = 'https://docuweave.io/og-image.PNG',
   type = 'website',
   schemaType,
   schemaData,
@@ -55,6 +55,9 @@ export default function SEO({
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={title} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
