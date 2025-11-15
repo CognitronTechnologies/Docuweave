@@ -10,25 +10,25 @@ const services = [
   {
     icon: 'document',
     title: 'Product documentation',
-    desc: 'Create developer-first, launch-ready docs that reduce support requests and help users succeed from day one.',
+    desc: 'Create clear, user-centric docs that accelerate product adoption and reduce support tickets. Ship documentation that helps your users succeed.',
     link: '/services/product-documentation',
   },
   {
     icon: 'rocket',
     title: 'Developer marketing',
-    desc: 'Technical content that builds trust and grows your developer community. Content that actually gets read and shared.',
+    desc: 'Technical content that builds trust and credibility. Generate qualified leads and establish authority with professional whitepapers, engaging blogs, and more.',
     link: '/services/developer-marketing',
   },
   {
     icon: 'stack',
     title: 'Modern docs stack',
-    desc: 'Build future-ready documentation infrastructure with scalable, developer-friendly systems and AI-ready workflows.',
+    desc: 'Modernize your documentation infrastructure and improve team efficiency with scalable, developer-friendly systems. Build workflows that grow with your product.',
     link: '/services/modern-docs-stack',
   },
   {
     icon: 'writer',
     title: 'Hire technical writers',
-    desc: 'Get experienced technical writers who understand code and ship docs that drive adoption. Fast turnaround, transparent pricing.',
+    desc: 'Access experienced technical writers with engineering backgrounds to deliver professional docs. Get quality docs without the overhead of full-time hiring.',
     link: '/services/hire-technical-writer',
   },
 ]
@@ -43,7 +43,7 @@ const iconMap = {
 
 const rotatingPhrases = [
   "deliver impact",
-  "developers trust",
+  "your users trust",
   "drive adoption"
 ]
 
@@ -100,7 +100,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
-            Expert technical writing that turns complex products into clear documentation. Less support tickets, faster adoption, happier developers.
+            Professional technical writing services that enable you to accelerate product adoption, reduce support costs, and empower your users to succeed.
           </p>
         </section>
         <div id="services" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
