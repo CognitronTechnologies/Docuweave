@@ -28,7 +28,7 @@ const services = [
   {
     icon: 'writer',
     title: 'Hire technical writers',
-    desc: 'Access experienced technical writers with engineering backgrounds to deliver professional docs. Get quality docs without the overhead of full-time hiring.',
+    desc: 'Hire experienced technical writers with engineering backgrounds to deliver professional docs. Get quality docs without the overhead of full-time hiring.',
     link: '/services/hire-technical-writer',
   },
 ]
