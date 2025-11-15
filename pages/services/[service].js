@@ -1,8 +1,16 @@
 import { services } from '../../lib/servicesData';
 import Navbar from '../../components/Navbar';
 import SEO from '../../components/SEO';
+import { useState } from 'react';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 export default function ServicePage({ service }) {
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
+  const toggleFaq = (index) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
   if (!service) {
     return (
       <>
@@ -33,7 +41,7 @@ export default function ServicePage({ service }) {
   return (
     <>
       <SEO
-        title={`${service.title} | Docuweave Services`}
+        title={`${service.title} | Docuweave`}
         description={service.heroDescription || service.subtitle || service.purpose}
         canonical={`https://docuweave.io/services/${service.slug || ''}`}
         openGraph={{
@@ -55,7 +63,28 @@ export default function ServicePage({ service }) {
           serviceType: service.title,
           url: `https://docuweave.io/services/${service.slug || ''}`,
         }}
-      />
+      >
+        {/* FAQ Schema */}
+        {service.faqs && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: service.faqs.map(faq => ({
+                  '@type': 'Question',
+                  name: faq.question,
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: faq.answer
+                  }
+                }))
+              })
+            }}
+          />
+        )}
+      </SEO>
       <div className="flex flex-col min-h-screen bg-white">
         <Navbar />
         <main className="flex-grow">
@@ -172,6 +201,38 @@ export default function ServicePage({ service }) {
                     "{service.testimonial.quote}"
                   </blockquote>
                   <cite className="text-accent font-semibold">— {service.testimonial.author}</cite>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* FAQ Section */}
+          {service.faqs && (
+            <section className="bg-white py-16">
+              <div className="max-w-4xl mx-auto px-4">
+                <h2 className="text-3xl font-heading font-bold text-text-primary mb-8 text-center">Frequently asked questions</h2>
+                <div className="space-y-4">
+                  {service.faqs.map((faq, index) => (
+                    <div key={index} className="bg-light-secondary border border-border rounded-xl overflow-hidden shadow-card">
+                      <button
+                        onClick={() => toggleFaq(index)}
+                        className="w-full flex items-center justify-between p-6 text-left hover:bg-white/50 transition-colors"
+                        aria-expanded={openFaqIndex === index}
+                      >
+                        <h3 className="text-lg font-semibold text-text-primary pr-4">{faq.question}</h3>
+                        <ChevronDownIcon 
+                          className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 ${
+                            openFaqIndex === index ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      {openFaqIndex === index && (
+                        <div className="px-6 pb-6 pt-2">
+                          <p className="text-text-secondary leading-relaxed">{faq.answer}</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
