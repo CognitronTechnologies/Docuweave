@@ -4,41 +4,55 @@
     <loc>https://docuweave.io/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+    <lastmod>2025-11-15</lastmod>
   </url>
   <url>
     <loc>https://docuweave.io/about</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2025-11-15</lastmod>
   </url>
   <url>
     <loc>https://docuweave.io/services</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2025-11-15</lastmod>
   </url>
   <url>
     <loc>https://docuweave.io/contact</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2025-11-15</lastmod>
   </url>
   <url>
     <loc>https://docuweave.io/services/product-documentation</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2025-11-15</lastmod>
   </url>
   <url>
     <loc>https://docuweave.io/services/developer-marketing</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2025-11-15</lastmod>
   </url>
   <url>
     <loc>https://docuweave.io/services/modern-docs-stack</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2025-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://docuweave.io/services/hire-technical-writer</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-11-15</lastmod>
   </url>
   <url>
     <loc>https://docuweave.io/blog</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
+    <lastmod>2025-11-15</lastmod>
   </url>
   <url>
     <loc>https://docuweave.io/blog/every-product-needs-great-documentation</loc>
