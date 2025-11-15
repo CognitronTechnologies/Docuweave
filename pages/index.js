@@ -64,7 +64,7 @@ export default function Home() {
         title=" Docuweave - Technical Writing & Documentation Services | Hire Technical Writers "
         description="Hire experienced technical writers with engineering backgrounds. We create API documentation, developer guides, and product docs for SaaS companies. Reduce support tickets and accelerate adoption with professional documentation services."
         url="https://docuweave.io"
-        image="https://docuweave.io/og-image.png"
+        image="https://docuweave.io/og-image.PNG"
       />
       <Navbar />
       {/* Gradient overlay background for hero section */}
