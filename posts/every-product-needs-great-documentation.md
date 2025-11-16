@@ -1,7 +1,7 @@
 ---
 title: "Why every product needs great technical documentation"
 date: "2025-11-12"
-description: Great documentation isn't optional—it's a competitive advantage. Explore the hidden costs of poor docs and why technical content is critical in modern product development."
+description: "Poor documentation costs companies thousands in support tickets and lost deals. Learn why technical documentation is essential for product success and how it impacts adoption, revenue, and team efficiency."
 author: "Docuweave Team"
 tags: ["technical writing", "product development", "developer experience", "documentation"]
 ---
@@ -69,7 +69,7 @@ An example is how Amazon requires teams to write a **press release and FAQ** bef
 
 ### API-first and developer experience (DX)
 
-As software becomes more API-driven, documentation _is_ your product's UI for developers **Stripe's leadership has publicly credited their API documentation as a key driver of early adoption and growth**[^8].
+As software becomes more API-driven, documentation _is_ your product's UI for developers. **Stripe's leadership has publicly credited their API documentation as a key driver of early adoption and growth**[^8]. For detailed guidance on creating effective API documentation, read our article on [how to write API documentation that developers actually use](/blog/create-api-documentation-for-developers).
 
 Modern API documentation needs:
 
