@@ -1,8 +1,8 @@
 ---
-title: "Creating API Documentation That Developers Actually Use"
+title: "How to write API documentation that developers actually use"
 date: "2025-11-15"
 author: "Docuweave Team"
-description: "Learn how to create API documentation that developers love. Discover practical tips and examples for writing clear, comprehensive API docs that drive adoption and reduce support tickets."
+description: "Learn how to write API documentation that developers love. Discover practical tips and examples for writing clear, comprehensive API docs that drive adoption and reduce support tickets."
 tags: ["API Documentation", "Developer Experience", "Technical Writing", "Best Practices"]
 ---
 
@@ -574,7 +574,7 @@ Your documentation should:
 4. Stay current and accurate by testing code examples and versioning clearly
 5. Make finding answers easy with great search and clear navigation
 
-If your documentation does these five things well, developers will not only use your API but also recommend it. And that's worth more than any amount of marketing spend.
+If your documentation does these five things well, developers will not only use your API but also recommend it. And that's worth more than any amount of marketing spend. Want to understand the broader business impact of great documentation? Learn [why every product needs great technical documentation](/blog/every-product-needs-great-documentation).
 
 ---
 

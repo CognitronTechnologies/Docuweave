@@ -72,23 +72,28 @@ export default function About() {
                 What we do
               </h2>
               <p className="text-lg text-text-secondary mb-8 text-center max-w-3xl mx-auto">
-                We offer three core services designed to meet dev teams wherever they are:            </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                We offer four core services designed to meet dev teams wherever they are:            </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {[
                   {
                     number: "1",
                     title: "Product documentation",
-                    desc: "Launch-ready API references, integration guides, SDK tutorials, and changelogs that scale with your product."
+                    desc: "Create clear, user-centric docs that accelerate product adoption and reduce support tickets. Ship documentation that helps your users succeed."
                   },
                   {
                     number: "2", 
                     title: "Developer marketing",
-                    desc: "Technical content that builds trust and grows your developer community. Content that actually gets read and shared."
+                    desc: "Technical content that builds trust and credibility. Generate qualified leads and establish authority with professional whitepapers, engaging blogs, and more."
                   },
                   {
                     number: "3",
                     title: "Modern docs stack", 
-                    desc: "Build future-ready documentation infrastructure with scalable, developer-friendly systems and AI-ready workflows."
+                    desc: "Modernize your documentation infrastructure and improve team efficiency with scalable, developer-friendly systems. Build workflows that grow with your product."
+                  },
+                  {
+                    number: "4",
+                    title: "Hire technical writers",
+                    desc: "Hire experienced technical writers with engineering backgrounds to deliver professional docs. Get quality docs without the overhead of full-time hiring."
                   }
                 ].map((service) => (
                   <div key={service.number} className="bg-white border border-border rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow">
@@ -152,29 +157,6 @@ export default function About() {
             </div>
           </section>
 
-          {/* Tools & Tech */}
-          <section className="bg-white py-16">
-            <div className="max-w-6xl mx-auto px-4">            <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-8 text-center">
-                Meet the Docuweave Team
-              </h2>
-              <p className="text-lg text-text-secondary mb-6 leading-relaxed">
-                Docuweave is a distributed team of engineers-turned-writers, content strategists, and DevRel professionals.
-              </p>            <div className="max-w-4xl mx-auto">
-                <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-6 mb-6 border border-primary/20">
-                  <p className="text-lg text-text-primary font-medium mb-4">We've written and scaled documentation for:</p>
-                  <ul className="space-y-2 text-text-secondary">
-                    <li>• APIs used by thousands of developers</li>
-                    <li>• DevTools used by major fintech and AI startups</li>
-                    <li>• Platforms adopted by open-source communities worldwide</li>
-                  </ul>
-                </div>
-                <p className="text-lg text-text-primary font-medium text-center">
-                  We don't just write docs. We build systems, mentor teams, and help you scale like you've already hired your dream docs team.
-                </p>
-              </div>
-            </div>
-          </section>
-
           {/* Operating Principles */}
           <section className="bg-light-secondary py-16">
             <div className="max-w-6xl mx-auto px-4">
@@ -187,9 +169,9 @@ export default function About() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                   {
-                    icon: "🧑‍💻",
-                    title: "Empathy for users, precision for devs",
-                    desc: "We design with empathy for users and build with technical accuracy, bridging clarity and code to improve adoption and usability."
+                    icon: "�",
+                    title: "Empathy for users",
+                    desc: "We put ourselves in your users' shoes, creating documentation that answers their questions and guides them to success at every stage of their journey."
                   },
                   {
                     icon: "🪄",
