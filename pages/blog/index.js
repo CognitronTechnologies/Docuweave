@@ -43,7 +43,7 @@ export default function BlogIndex({ posts }) {
       </div>
       <div className="relative min-h-screen bg-white py-16 px-4 flex flex-col">
         <div className="max-w-3xl mx-auto w-full flex-1">
-          <h1 className="text-5xl font-heading font-bold text-text-primary mb-8 text-center">Docuweave Blog</h1>
+          <h1 className="text-5xl font-heading font-bold text-text-primary mb-8 text-center">The Docuweave Blog</h1>
           <div className="flex justify-center mb-8">
             <Link href="/">
               <button className="bg-primary text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-accent transition">
