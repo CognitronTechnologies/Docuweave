@@ -43,7 +43,7 @@ export default function ServicesIndex() {
       <SEO
         title="Our Services | Docuweave"
         description="Professional technical writing and documentation services for SaaS companies and developer tools. Product documentation, developer marketing, modern docs stack, and technical writer staffing."
-        url="https://docuweave.io/services"
+        url="https://docuweave.io/services/"
         image="https://docuweave.io/og-image.PNG"
       />
       <Navbar />
