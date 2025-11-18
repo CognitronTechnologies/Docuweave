@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-white">
       <SEO
-        title=" Docuweave - Technical Writing & Documentation Services | Hire Technical Writers "
+        title="Docuweave - Technical Writing & Documentation Services | Hire Technical Writers"
         description="Hire experienced technical writers with engineering backgrounds. We create API documentation, developer guides, and product docs for SaaS companies. Reduce support tickets and accelerate adoption with professional documentation services."
         url="https://docuweave.io"
         image="https://docuweave.io/og-image.PNG"

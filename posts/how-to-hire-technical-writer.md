@@ -9,7 +9,7 @@ tags: ["Technical Writing", "Hiring", "Documentation", "Product Management"]
 
 Your product is ready. Your engineering team shipped. Your sales team is closing deals. But your documentation? It's a patchwork of rushed README files, outdated API references, and Slack messages explaining how things actually work.
 
-If this sounds familiar, you're not alone. Most companies realize they need professional documentation help only after the problems pile up: support tickets flooding in with the same questions, developers abandoning your API mid-integration, sales cycles dragging on because prospects can't understand your product. If you're wondering why great documentation matters, read our article on [why every product needs great technical documentation](/blog/every-product-needs-great-documentation)).
+If this sounds familiar, you're not alone. Most companies realize they need professional documentation help only after the problems pile up: support tickets flooding in with the same questions, developers abandoning your API mid-integration, sales cycles dragging on because prospects can't understand your product. If you're wondering why great documentation matters, read our article on [why every product needs great technical documentation](/blog/every-product-needs-great-documentation).
 
 The solution is clear: you need technical writing expertise. But here's the question most companies get wrong: you don't necessarily need to hire a full-time employee. In 2025, there are smarter, faster, and more flexible ways to get professional documentation without the overhead of traditional hiring.
 

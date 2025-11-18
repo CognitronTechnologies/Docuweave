@@ -6,19 +6,19 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Docuweave | Meet Our Technical Writing Experts"
-        description="Meet the Docuweave team and learn how our technical writers help software companies turn documentation into a competitive advantage."
+        title="About Docuweave | Technical Writing That Scales"
+        description="We help product teams build documentation systems that scale. From API docs to developer content, we create docs that reduce support tickets and accelerate adoption."
         canonical="https://docuweave.io/about"
         openGraph={{
-          title: 'About Docuweave | Meet Our Technical Writing Experts',
-          description: 'Meet the Docuweave team and learn how our technical writers help software companies turn documentation into a competitive advantage.',
+          title: 'About Docuweave | Technical Writing That Scales',
+          description: 'We help product teams build documentation systems that scale. From API docs to developer content, we create docs that reduce support tickets and accelerate adoption.',
           url: 'https://docuweave.io/about',
           type: 'website',
         }}
         schemaType="AboutPage"
         schemaData={{
           name: 'About Docuweave',
-          description: 'Meet the Docuweave team and learn how our technical writers help software companies turn documentation into a competitive advantage.',
+          description: 'We help product teams build documentation systems that scale. From API docs to developer content, we create docs that reduce support tickets and accelerate adoption.',
           url: 'https://docuweave.io/about',
           publisher: {
             '@type': 'Organization',
@@ -43,7 +43,7 @@ export default function About() {
               🚀 Docs that drive adoption, reduce support, and scale with you
             </p>
             <p className="text-xl text-text-secondary leading-relaxed max-w-4xl mx-auto mb-8">
-              At Docuweave, we help product teams turn documentation into a strategic advantage. Whether you're launching your first API or scaling a platform, we create high-quality, usable documentation — we go beyond writing; we help you build documentation systems that evolve alongside your product, team, and tech stack.
+              At Docuweave, we help product teams turn documentation into a strategic advantage. Whether you're launching your first API or scaling a platform, we create high-quality and usable documentation. We go beyond just writing docs. We help you build systems that evolve with your product, team, and tech stack.
             </p>
 
             {/* Our Story */}
@@ -52,15 +52,15 @@ export default function About() {
               
               <div className="prose prose-lg max-w-none text-text-secondary space-y-6">
                 <p>
-                  We started Docuweave after seeing too many great products lose developer trust, not because of bad code, but because of rushed, outdated, or incomplete documentation. We kept running into the same patterns: docs written under deadline pressure, maintained barely by overworked engineers, treated as one-time deliverables rather than living product assets, disconnected from product planning and release cycles, and difficult to scale across teams and time zones.
+                  We started Docuweave after seeing too many great products fail because of rushed, outdated, or incomplete documentation. We kept running into the same patterns: docs written under deadline pressure, barely maintained by overworked engineers, and treated as an afterthought rather than a core product. Documentation that couldn't scale across teams or keep up with release cycles.
                 </p>
                 
                 <p>
-                  We believe documentation should be treated like code: planned, maintained, and evolved. From the first planning doc to the final release note, docs should grow with your product and serve as a strategic layer of the developer experience.
+                  We believe that documentation should be treated like code, all the way from planning to maintenance. Your docs should grow with your product and be a core part of the developer experience, not something you bolt on at the end.
                 </p>
                 
                 <p>
-                  That's why we built Docuweave: to bring clarity, consistency, and craftsmanship to developer documentation. We help teams build systems that scale with their products and earn developer trust at every step. Because great documentation isn't just helpful, it's a competitive advantage.
+                  That's why we built Docuweave - to bring clarity and consistency to developer documentation. We help teams create docs that scale with their product and earn their users' trust. Because great documentation isn't just helpful - it's HOW YOU WIN.
                 </p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function About() {
                 What we do
               </h2>
               <p className="text-lg text-text-secondary mb-8 text-center max-w-3xl mx-auto">
-                We offer four core services designed to meet dev teams wherever they are:            </p>
+                Four ways we help teams ship better docs:            </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {[
                   {
@@ -164,7 +164,7 @@ export default function About() {
                 Docuweave principles
               </h2>
               <p className="text-lg text-text-secondary mb-8 text-center max-w-3xl mx-auto">
-                At DocuWeave, these core beliefs guide every doc we craft:
+                At Docuweave, these core beliefs guide every doc we craft::
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
@@ -181,22 +181,22 @@ export default function About() {
                   {
                     icon: "📈",
                     title: "Scalable by design",
-                    desc: "We build documentation systems that grow with your product, team, and tech stack, ensuring long-term efficiency and consistency."
+                    desc: "We build documentation systems that grow with you. No matter how fast your product or team scales, your docs keep up."
                   },
                   {
                     icon: "🤝",
                     title: "Embedded partnership",
-                    desc: "We don't just deliver docs. We integrate with your team to co-create, iterate, and scale together."
+                    desc: "We don't just deliver docs. We work alongside your team to co-create, iterate, and scale together."
                   },
                   {
                     icon: "🔄",
                     title: "Evolving with you",
-                    desc: "Your product changes fast, so should your docs. We build living systems that adapt to new features, feedback, and user needs."
+                    desc: "Your product changes constantly. We build living documentation that adapts to new features, feedback, and user needs."
                   },
                   {
                     icon: "🧠",
                     title: "Driven by insight",
-                    desc: "We use data, feedback, and usage analytics to continuously refine documentation, ensuring it stays relevant, effective, and impactful."
+                    desc: "We use data, feedback, and analytics to continuously improve your docs and keep them relevant."
                   }
                 ].map((p) => (
                   <div
@@ -243,33 +243,33 @@ export default function About() {
 const results = [
   {
     icon: "🎧",
-    title: "Lower support volume",
-    desc: "Reduce repetitive tickets by empowering users with clear, self-serve documentation."
+    title: "Fewer support requests",
+    desc: "Cut down repetitive tickets. When users can find answers themselves, your support team can focus on real problems."
   },
   {
     icon: "⏱️",
-    title: "Faster developer onboarding",
-    desc: "Help developers get productive quickly with intuitive guides and first-use flows."
+    title: "Faster onboarding",
+    desc: "Get developers productive in hours, not days. Clear guides mean less handholding and faster time-to-first-value."
   },
   {
     icon: "🚀",
-    title: "Higher API and SDK adoption",
-    desc: "Drive engagement and usage with well-structured, discoverable, and actionable content."
+    title: "Better product adoption",
+    desc: "Developers choose products and tools they can actually use. Good docs mean more integrations and higher engagement."
   },
   {
     icon: "📅",
-    title: "Shorter time-to-market",
-    desc: "Accelerate launches with documentation that's ready when your product is."
+    title: "Ship on time",
+    desc: "Accelerate launches with ready documentation. No more scrambling to document features after release."
   },
   {
     icon: "🌱",
-    title: "Sustainable documentation systems",
-    desc: "Build scalable, governed content ecosystems that grow with your product and team."
+    title: "Documentation that scales",
+    desc: "Build systems that grow with you instead of turning into a maintenance nightmare."
   },
   {
     icon: "🤝",
-    title: "Aligned teams, aligned outcomes",
-    desc: "Centralized documentation keeps cross-functional teams in sync, reducing miscommunication and speeding up execution."
+    title: "Teams that stay aligned",
+    desc: "A single source of truth keeps everyone on the same page and moving in the same direction."
   }
 ];
 
