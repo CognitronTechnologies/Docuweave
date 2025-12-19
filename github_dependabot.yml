@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # or "pip", "maven", etc.
+    directory: "/" # root directory; change if your manifest is elsewhere
+    schedule:
+      interval: "daily" # or "weekly", "monthly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    allow:
+      - dependency-type: "all" # or "direct", "indirect"
+    # Optionally, enable security updates only:
+    # ignore:
+    #   - dependency-type: "development"
