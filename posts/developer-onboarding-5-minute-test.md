@@ -144,9 +144,9 @@ Your documentation homepage should have a code block above the fold that works *
 
 **Bad homepage:**
 ```markdown
-# Welcome to Acme API
+# Welcome to Stellar API
 
-Acme API is a powerful platform for managing customer data across 
+Stellar API is a powerful platform for managing customer data across 
 multiple channels. Our robust infrastructure ensures high availability 
 and scalability for enterprise deployments.
 
@@ -160,9 +160,9 @@ This tells developers nothing about what your product actually *does*.
 # Send your first message in 30 seconds
 
 ```bash
-curl -X POST https://api.acme.com/messages \
+curl -X POST https://api.stellar.app/messages \
   -H "Authorization: Bearer demo_key_abc123" \
-  -d '{"to": "+15555551234", "body": "Hello from Acme!"}'
+  -d '{"to": "+15555551234", "body": "Hello from Stellar!"}'
 ```
 
 Response:
@@ -195,7 +195,7 @@ Never make developers sign up before they can try your product. Provide demo API
 // No signup required - use this demo key to try it now
 const apiKey = 'demo_key_abc123';
 
-const client = new AcmeAPI(apiKey);
+const client = new StellarAPI(apiKey);
 const result = await client.send('Hello World!');
 
 console.log(result);
@@ -213,7 +213,7 @@ Don't just call it "Getting Started." Call it what it is: **"5-Minute Quickstart
 Then actually make it 5 minutes:
 
 ```markdown
-## 5-Minute Quickstart
+### 5-Minute Quickstart
 
 **Goal:** Send your first message in 5 minutes
 
@@ -221,20 +221,20 @@ Then actually make it 5 minutes:
 
 **Step 1: Install (30 seconds)**
 ```bash
-npm install @acme/sdk
+npm install @stellar/sdk
 ```
 
 **Step 2: Send a message (1 minute)**
 ```javascript
-const Acme = require('@acme/sdk');
+const Stellar = require('@stellar/sdk');
 
 // Use demo key - works immediately, no signup
-const client = new Acme('demo_key_abc123');
+const client = new Stellar('demo_key_abc123');
 
 async function sendMessage() {
   const message = await client.messages.create({
     to: '+15555551234',      // Try your own number!
-    body: 'Hello from Acme!'
+    body: 'Hello from Stellar!'
   });
   
   console.log('✅ Message sent!', message.id);
@@ -251,15 +251,14 @@ Run the code. You should see:
 ✅ Message sent! msg_abc123
 ```
 
-Check your phone - you just received a message from Acme API!
+Check your phone - you just received a message from Stellar API!
 
-**🎉 Done! You're ready for production.**
+** Done! You're ready for production.**
 
 **Next steps:**
 - [Get your production API key] (2 minutes)
 - [Add error handling] (5 minutes)
 - [Send messages from your app] (10 minutes)
-```
 
 This quickstart:
 - Has a clear goal
@@ -331,8 +330,8 @@ Tools like [RunKit](https://runkit.com/) or [CodeSandbox](https://codesandbox.io
 
 ```javascript
 // Click "Run" to try this code →
-const acme = require('@acme/sdk');
-const client = new acme('demo_key_abc123');
+const stellar = require('@stellar/sdk');
+const client = new stellar('demo_key_abc123');
 
 const result = await client.send('Hello!');
 console.log(result);
@@ -346,7 +345,7 @@ Every dependency you require is a reason for developers to quit.
 
 **Bad quickstart:**
 ```markdown
-## Getting Started
+### Getting Started
 
 **Prerequisites:**
 - Node.js 18+
@@ -368,13 +367,12 @@ By step 3, you've lost 80% of developers.
 
 **Good quickstart:**
 ```markdown
-## Getting Started (30 seconds)
+### Getting Started (30 seconds)
 
 ```bash
-npx @acme/cli demo
+npx @stellar/cli demo
 
 # That's it. A demo environment is running at http://localhost:3000
-```
 ```
 
 **Supabase** nails this. Their quickstart uses their hosted service. No local database. No Docker. No configuration files. Just a working project in 60 seconds.
@@ -493,72 +491,6 @@ console.log(data) // Real data, instantly
 
 **Time to success:** 20 seconds
 
-## Measuring onboarding success
-
-How do you know if your improvements are working?
-
-### Key metrics to track
-
-**1. Time to first successful API call**
-- Ideal: Under 5 minutes
-- Acceptable: Under 15 minutes
-- Problem: Over 30 minutes
-
-**How to measure:** Analytics on your quickstart page + API logs
-
-**2. Quickstart completion rate**
-- Ideal: 70%+ complete the quickstart
-- Problem: Under 40%
-
-**How to measure:** Track progression through quickstart steps
-
-**3. Signup → Active user conversion**
-- Ideal: 50%+ of signups make an API call
-- Problem: Under 20%
-
-**How to measure:** Activation funnel in your analytics
-
-**4. Time to second API call**
-- Ideal: Same session as first call
-- Problem: Days later or never
-
-**Why it matters:** If developers don't come back, onboarding failed
-
-**5. Support ticket volume (first 7 days)**
-- Ideal: Decreasing over time
-- Problem: Increasing or staying flat
-
-**How to measure:** Tag tickets by user account age
-
-### Set up tracking
-
-Add analytics to your documentation:
-
-```javascript
-// Track when developers reach key milestones
-analytics.track('quickstart_started', {
-  entry_point: 'homepage',
-  timestamp: Date.now()
-});
-
-analytics.track('first_api_call_success', {
-  time_to_success: 247, // seconds
-  endpoint: '/messages',
-  sdk: 'node'
-});
-
-analytics.track('quickstart_completed', {
-  completion_time: 312, // seconds
-  followed_next_steps: true
-});
-```
-
-Review this data weekly:
-- Where do developers drop off?
-- Which steps take longest?
-- What errors appear most frequently?
-- Which paths lead to fastest success?
-
 ## Common objections (and why they're wrong)
 
 ### "Our product is complex, 5 minutes isn't realistic"
@@ -590,38 +522,6 @@ Yes, you can. Provide:
 - Browser-based playground
 
 **Gitpod** lets developers spin up complete dev environments in seconds. There's no excuse anymore.
-
-## The fix: Your 30-day onboarding overhaul
-
-Here's how to fix your onboarding in one month.
-
-### Week 1: Audit and benchmark
-- [ ] Run the 5-minute test yourself (be honest)
-- [ ] Watch 5 developers attempt onboarding (record everything)
-- [ ] Identify top 3 friction points
-- [ ] Benchmark against competitors (time their quickstarts)
-- [ ] Document current time-to-success metrics
-
-### Week 2: Create demo environment
-- [ ] Generate demo API keys that work immediately
-- [ ] Build a hosted sandbox (or use existing infrastructure)
-- [ ] Create test data that produces realistic results
-- [ ] Set up rate limiting for demo keys
-- [ ] Test that demos work without signup
-
-### Week 3: Build new quickstart
-- [ ] Write 5-minute quickstart with clear goal
-- [ ] Ensure every code example is copy-pasteable
-- [ ] Show expected output for all examples
-- [ ] Add "Try it now" interactive elements
-- [ ] Test with fresh developers (iterate based on feedback)
-
-### Week 4: Launch and measure
-- [ ] Deploy new quickstart as primary entry point
-- [ ] Add analytics tracking (time-to-success, drop-off points)
-- [ ] Monitor support tickets for onboarding questions
-- [ ] Collect feedback ("Was this helpful?")
-- [ ] Iterate based on data
 
 ## The bottom line
 

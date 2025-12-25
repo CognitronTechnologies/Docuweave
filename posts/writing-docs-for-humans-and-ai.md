@@ -24,11 +24,11 @@ This creates a new challenge: your docs must be optimized for two very different
 
 When documentation isn't structured for AI consumption, hallucination happens:
 
-> **User:** "How do I export my data from Acme App?"
+> **User:** "How do I export my data from Stellar?"
 >
 > **ChatGPT:** "Go to Settings → Data Management → Export. Choose CSV, JSON, or PDF format..."
 
-Except Acme App doesn't have a data export feature. ChatGPT inferred this from similar products and confidently invented an entire workflow. The user tries these steps, fails, gets frustrated, and contacts support or churns entirely.
+Except Stellar doesn't have a data export feature. ChatGPT inferred this from similar products and confidently invented an entire workflow. The user tries these steps, fails, gets frustrated, and contacts support or churns entirely.
 
 **This is happening to your product right now.** The solution isn't to fight AI. It's to give AI accurate information to work with.
 
@@ -66,20 +66,20 @@ SEO optimizes for search engines. **AEO optimizes for answer engines**, the AI s
 **1. Answer the question directly.** AI extracts answers from your content. If your answer is buried in paragraphs of context, AI may miss it or synthesize incorrectly. Put the answer first, then provide context:
 
 ```markdown
-## Can I use Acme App offline?
+## Can I use Stellar offline?
 
-**No, Acme App requires an internet connection.** All data syncs in real-time 
+**No, Stellar requires an internet connection.** All data syncs in real-time 
 with our servers, and offline mode is not currently available.
 
 We're exploring offline capabilities for a future release. For now, you can...
 ```
 
-**2. Use question-based headings.** Match how users actually ask. Instead of "Offline Functionality," write "Can I use Acme App offline?" Instead of "Data Export," write "How do I export my data?" Instead of "Pricing Information," write "How much does Acme App cost?"
+**2. Use question-based headings.** Match how users actually ask. Instead of "Offline Functionality," write "Can I use Stellar offline?" Instead of "Data Export," write "How do I export my data?" Instead of "Pricing Information," write "How much does Stellar cost?"
 
 **3. State what you DON'T do.** AI hallucinates features based on similar products. Prevent this by explicitly stating limitations:
 
 ```markdown
-## What Acme App analytics does NOT include
+## What Stellar analytics does NOT include
 
 - Time tracking or hours logged
 - Budget or cost tracking
@@ -97,10 +97,10 @@ We're exploring offline capabilities for a future release. For now, you can...
 Go to Settings → Billing → Cancel. You'll keep access until your billing period ends.
 
 ### Can I get a refund?
-Yes, within 14 days of purchase. Email support@acme.app.
+Yes, within 14 days of purchase. Email support@stellar.app.
 
 ### Do you offer nonprofit discounts?
-Yes, 50% off all plans. Contact sales@acme.app with proof of status.
+Yes, 50% off all plans. Contact sales@stellar.app with proof of status.
 ```
 
 ## RAG optimization
@@ -116,7 +116,7 @@ Each section should work standalone. AI might retrieve just one chunk, so make s
 
 If you can't log in because you forgot your password:
 
-1. Go to acme.app/login
+1. Go to stellar.app/login
 2. Click "Forgot password?"
 3. Enter your email address
 4. Check your inbox and click the reset link
@@ -125,14 +125,14 @@ If you can't log in because you forgot your password:
 **Note:** Reset links expire after 24 hours.
 
 **Not receiving the email?** Check spam, verify you're using the correct 
-email, or contact support@acme.app.
+email, or contact support@stellar.app.
 ```
 
 This section has everything needed to answer "How do I reset my password?" without requiring context from other sections.
 
 ### Use descriptive headings
 
-Headings are how retrieval systems find relevant content. Avoid generic headings like "Overview," "Getting Started," or "More Info." Instead, write descriptive headings like "How to invite team members to your project," "Connecting Slack to Acme App," or "Understanding permission levels."
+Headings are how retrieval systems find relevant content. Avoid generic headings like "Overview," "Getting Started," or "More Info." Instead, write descriptive headings like "How to invite team members to your project," "Connecting Slack to Stellar," or "Understanding permission levels."
 
 ### Add semantic metadata
 
@@ -141,7 +141,7 @@ Frontmatter helps AI understand document relationships:
 ```yaml
 ---
 title: Share files with external users
-product: Acme App
+product: Stellar
 feature: Collaboration
 content_type: how-to
 plan_required: Pro
