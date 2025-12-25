@@ -66,7 +66,7 @@ SEO optimizes for search engines. **AEO optimizes for answer engines**, the AI s
 **1. Answer the question directly.** AI extracts answers from your content. If your answer is buried in paragraphs of context, AI may miss it or synthesize incorrectly. Put the answer first, then provide context:
 
 ```markdown
-## Can I use Stellar offline?
+### Can I use Stellar offline?
 
 **No, Stellar requires an internet connection.** All data syncs in real-time 
 with our servers, and offline mode is not currently available.
@@ -79,7 +79,7 @@ We're exploring offline capabilities for a future release. For now, you can...
 **3. State what you DON'T do.** AI hallucinates features based on similar products. Prevent this by explicitly stating limitations:
 
 ```markdown
-## What Stellar analytics does NOT include
+### What Stellar analytics does NOT include
 
 - Time tracking or hours logged
 - Budget or cost tracking
@@ -91,7 +91,7 @@ We're exploring offline capabilities for a future release. For now, you can...
 **4. Include structured FAQ sections.** FAQ format is ideal for AI retrieval because questions match user queries and answers are self-contained:
 
 ```markdown
-## Frequently Asked Questions
+### Frequently Asked Questions
 
 ### How do I cancel my subscription?
 Go to Settings → Billing → Cancel. You'll keep access until your billing period ends.
@@ -112,7 +112,7 @@ Many AI tools use Retrieval-Augmented Generation (RAG). The process works like t
 Each section should work standalone. AI might retrieve just one chunk, so make sure it has full context:
 
 ```markdown
-## Reset your password (forgot password)
+### Reset your password (forgot password)
 
 If you can't log in because you forgot your password:
 
@@ -172,7 +172,7 @@ Every how-to should include prerequisites (permissions, plan level, prior steps)
 Use the same structure for similar content. If AI learns your pattern from one article, it can predict structure in others:
 
 ```markdown
-## [Action verb] + [object]
+### [Action verb] + [object]
 
 [One sentence: what this does and why]
 
