@@ -37,11 +37,11 @@ Here's what a good quickstart looks like:
 
 ```bash
 # Install the SDK
-npm install acme-api
+npm install stellar-api
 
 # Make your first request (takes 30 seconds)
-const acme = require('acme-api');
-const client = new acme.Client('your-api-key');
+const stellar = require('stellar-api');
+const client = new stellar.Client('your-api-key');
 
 const user = await client.users.get('user_123');
 console.log(user.name); // "Jane Doe"
@@ -64,7 +64,7 @@ Example structure:
 **Quick Start (5 minutes)**
 
 1. Get your API key from [dashboard](...)
-2. Install the library: `npm install acme-api`
+2. Install the library: `npm install stellar-api`
 3. Make your first call:
    [working code example with expected output]
 4. ✅ Done! Now try: [link to common use cases]
@@ -179,7 +179,7 @@ This tells you nothing. What's invalid? Which field? How do I fix it?
     "message": "Missing required parameter: amount",
     "param": "amount",
     "code": "parameter_missing",
-    "docs_url": "https://docs.acme.com/errors/missing-amount"
+    "docs_url": "https://docs.stellar.app/errors/missing-amount"
   }
 }
 ```
@@ -317,7 +317,7 @@ user = client.users.create(
   </Tab>
   <Tab label="cURL">
 ```bash
-curl -X POST https://api.acme.com/v1/users \
+curl -X POST https://api.stellar.app/v1/users \
   -H "Authorization: Bearer your-api-key" \
   -d email="jane@example.com" \
   -d name="Jane Doe"
@@ -455,8 +455,8 @@ Match how developers search. Use the exact words they'd type into Google.
 
 Every heading should have a direct link:
 ```
-https://docs.acme.com/authentication#api-keys
-https://docs.acme.com/errors#rate-limit-exceeded
+https://docs.stellar.app/authentication#api-keys
+https://docs.stellar.app/errors#rate-limit-exceeded
 ```
 
 This lets developers:
