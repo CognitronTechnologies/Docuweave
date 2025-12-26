@@ -72,4 +72,22 @@
     <changefreq>monthly</changefreq>
     <lastmod>2025-11-16</lastmod>
   </url>
+  <url>
+    <loc>https://docuweave.io/blog/developer-onboarding-5-minute-test/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://docuweave.io/blog/writing-docs-for-humans-and-ai/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://docuweave.io/blog/ai-assistant-documentation-first/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-12-21</lastmod>
+  </url>
 </urlset>
