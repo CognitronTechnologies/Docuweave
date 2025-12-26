@@ -1,7 +1,7 @@
 import SEO from '../components/SEO'
 import { useState } from 'react'
 import Navbar from '../components/Navbar'
-import { EnvelopeIcon, UserIcon, ChatBubbleLeftRightIcon, TagIcon, DocumentTextIcon, PaperClipIcon, XMarkIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, UserIcon, ChatBubbleLeftRightIcon, TagIcon, DocumentTextIcon, PaperClipIcon, XMarkIcon, CalendarIcon } from '@heroicons/react/24/outline'
 
 const contactReasons = [
   { value: '', label: 'Select a service' },
@@ -11,19 +11,10 @@ const contactReasons = [
   { value: 'other', label: 'Other' },
 ]
 
-const budgetBands = [
-  { value: '', label: 'Select budget range' },
-  { value: '0-10000', label: '$0 - $10,000' },
-  { value: '10000-20000', label: '$10,000 - $20,000' },
-  { value: '20000-30000', label: '$20,000 - $30,000' },
-  { value: '30000-higher', label: '$30,000 and higher' },
-]
-
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [reason, setReason] = useState('')
-  const [budget, setBudget] = useState('')
   const [attachments, setAttachments] = useState([])
   const [submissionResult, setSubmissionResult] = useState(null)
 
@@ -103,15 +94,29 @@ export default function Contact() {
       />
       <div className="bg-white min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1 max-w-xl mx-auto py-12 px-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-text-primary text-center">Book a free consultation</h1>
-          <p className="text-text-secondary text-center mb-4 text-lg">
-            Interested in partnering with Docuweave or have a question? Feel free to reach out - we'd love to connect.
-          </p>
-          <p className="text-text-secondary text-center mb-8 text-base">
-            Prefer email? Reach us directly at <a href="mailto:dickson@docuweave.io" className="text-primary hover:text-accent font-semibold underline">dickson@docuweave.io</a>
-          </p>
-          {submitted ? (
+        <main className="flex-1 max-w-7xl mx-auto py-12 px-4">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-text-primary">Get in touch for a free consultation</h1>
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+              Choose your preferred way to connect - send us a message or book a consultation call directly.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Left: Contact Form */}
+            <div>
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold text-text-primary mb-2 flex items-center gap-2">
+                  <EnvelopeIcon className="w-6 h-6 text-primary" />
+                  Send us a message
+                </h2>
+                <p className="text-text-secondary">Fill out the form and we'll get back to you within 24 hours.</p>
+                <p className="text-text-secondary text-sm mt-2">
+                  Or email directly: <a href="mailto:dickson@docuweave.io" className="text-primary hover:text-accent font-semibold underline">dickson@docuweave.io</a>
+                </p>
+              </div>
+
+              {submitted ? (
             <div className="bg-green-600 text-white p-6 rounded-lg shadow text-center text-lg font-semibold">
               <p className="mb-2">Thank you for reaching out!</p>
               <p className="text-sm">Our team will be in touch within 1-2 business days.</p>
@@ -192,23 +197,6 @@ export default function Contact() {
                 </select>
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-primary font-medium flex items-center gap-2" htmlFor="budget">
-                  <CurrencyDollarIcon className="w-5 h-5" /> Estimated budget
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  required
-                  value={budget}
-                  onChange={e => setBudget(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg bg-light-secondary border border-border text-text-primary focus:ring-2 focus:ring-primary outline-none transition"
-                >
-                  {budgetBands.map(({ value, label }) => (
-                    <option key={value} value={value}>{label}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex flex-col gap-1">
                 <label className="text-primary font-medium flex items-center gap-2" htmlFor="message">
                   <ChatBubbleLeftRightIcon className="w-5 h-5" /> Message
                 </label>
@@ -277,6 +265,30 @@ export default function Contact() {
               </button>
             </form>
           )}
+            </div>
+
+            {/* Right: Calendar Booking */}
+            <div>
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold text-text-primary mb-2 flex items-center gap-2">
+                  <CalendarIcon className="w-6 h-6 text-primary" />
+                  Book a free consultation
+                </h2>
+                <p className="text-text-secondary">Schedule a 15 to 30-minute call to discuss your needs.</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl shadow-card border border-border overflow-hidden" style={{ minHeight: '700px' }}>
+                <iframe
+                  src="https://cal.com/dickson?embed=true&theme=light&primaryColor=0ea5e9"
+                  width="100%"
+                  height="700"
+                  frameBorder="0"
+                  allow="camera; microphone; autoplay; display-capture"
+                  style={{ border: 'none' }}
+                />
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </>
